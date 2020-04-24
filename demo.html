@@ -344,24 +344,50 @@
     }
 </style>
 
+<!-- 地图  -->
 
-<div class="china-map" id="china-map" style="width: 800px;height: 800px; margin: 0 auto"></div>
+<style>
+    .map-box {
+        position: relative;
+    }
+
+    .map-box .map-info {
+        position: absolute;
+        z-index: 100;
+        top: 20%;
+        left: 10%;
+        width: 300px;
+        height: 300px;
+        background: #aaa;
+        display: none;
+    }
+</style>
+
+<div class="map-box">
+    <div class="china-map" id="china-map" style="width: 800px;height: 600px; margin: 0 auto">
+    </div>
+    <div class="map-info" id="mapInfo">3123213</div>
+</div>
 <script>
     var myChart = echarts.init(document.getElementById('china-map'));
-    
+
 
     var data = [{
-        name: '云南',
+        name: '浙江',
         value1: 0,
         value2: 5,
-    }, {
-        name: '辽宁',
+    },{
+        name: '山东',
         value1: 0,
-        value2: 10,
-    }, {
-        name: '黑龙江',
+        value2: 5,
+    },{
+        name: '上海',
         value1: 0,
-        value2: 15,
+        value2: 5,
+    },{
+        name: '河南',
+        value1: 0,
+        value2: 5,
     }];
 
 
@@ -386,15 +412,15 @@
 
     var option = {
         dataRange: {
-	    	show:false,
-	        x: 'left',
-	        y: 'bottom',
-	        splitList: [
-	            {start: 5, end: 5, color: 'orange'},//当值为5时，区域背景
-	            {start: 10, end: 10, color: '#ff6300'},//当值为10时，区域背景
-	            {start: 15, end: 15, color: 'blue'},//当值为15时，区域背景
-	        ],
-	    },
+            show: false,
+            x: 'left',
+            y: 'bottom',
+            splitList: [
+                { start: 5, end: 5, color: 'orange' },//当值为5时，区域背景
+                { start: 10, end: 10, color: '#ff6300' },//当值为10时，区域背景
+                { start: 15, end: 15, color: 'blue' },//当值为15时，区域背景
+            ],
+        },
         xAxis: [{
             show: false,
             position: 'top',
@@ -417,7 +443,7 @@
                 alignWithLabel: true
             }
         }],
-        series: [{  
+        series: [{
             hoverable: false,
             z: 1,
             type: 'map',
@@ -441,42 +467,49 @@
     };
     myChart.setOption(option);
 
-    
-    myChart.on('hover', function(params){
-        console.log(params)
-        return false
+
+    // 设置鼠标滑过的样式
+    myChart.on('mousemove', function (params) {
+        params.value = 100;
+        myChart.setOption(option);
     })
 
     //点击事件
-	myChart.on('click', function (params) {//点击事件
-            select_province(params.name);
-            console.log(params)
-	});
-	//初始化省颜色
-	function ini_province(){
-		var ini_len=option.series[0].data.length;
-		for(var i=0;i<ini_len;i++){
-			//初始化颜色
-			option.series[0].data[i].value=5;
-			mycharts.setOption(option);
-		}
-		
-	}
-	//选中省颜色
-	function select_province(province_name){
-		var len=option.series[0].data.length;
-		for(var i=0;i<len;i++){
-			if(option.series[0].data[i].name==province_name){//如果匹配正确
-				//先归零
-				ini_province();
-				//改变颜色
-				option.series[0].data[i].value=10;
-				mycharts.setOption(option);
-			}
-		}
+    myChart.on('click', function (params) {//点击事件
+        var mapInfo = document.getElementById('mapInfo');
+        console.log(params)
+        if(!params.data || params.data.value !== 5){
+            mapInfo.style.display = 'none'
+            return false
+        }
+        mapInfo.style.display = 'block'
+
+    });
+    //初始化省颜色
+    function ini_province() {
+        var ini_len = option.series[0].data.length;
+        for (var i = 0; i < ini_len; i++) {
+            //初始化颜色
+            option.series[0].data[i].value = 5;
+            myChart.setOption(option);
+        }
+
     }
-    
-    
+    //选中省颜色
+    function select_province(province_name) {
+        var len = option.series[0].data.length;
+        for (var i = 0; i < len; i++) {
+            if (option.series[0].data[i].name == province_name) {//如果匹配正确
+                //先归零
+                ini_province();
+                //改变颜色
+                option.series[0].data[i].value = 15;
+                myChart.setOption(option);
+            }
+        }
+    }
+
+
 </script>
 
 <!-- 32991415 -->
