@@ -96,11 +96,19 @@ body {
     line-height: .25rem;
 }
 
-.list-header{
-    background: #23447C;
-}
 .list-item {
     display: flex;
+    height: .2rem;
+    line-height: .2rem;
+    margin: .06rem 0;
+}
+
+.list-header{
+    background: #23447C;
+    opacity: .7;
+    height: .32rem;
+    line-height: .32rem;
+    
 }
 
 .list-item-td {
@@ -137,7 +145,7 @@ body {
     height: 1.1rem;
     float: left;
     margin-top: .38rem;
-    background: #eee;
+    color: #fff;
 }
 
 .arrears-list {
@@ -252,7 +260,6 @@ body {
 .achievement-chart {
     width: 2.5rem;
     height: 1rem;
-    background: #aaa;
     margin-top: .15rem;
 }
 
@@ -265,7 +272,7 @@ body {
 
 .mortgage .order{
     font-size: .2rem;
-    margin-top: .1rem;
+    margin-top: .2rem;
 }
 
 .mortgage .mortgage-normal-text{
@@ -275,8 +282,7 @@ body {
 .mortgage .mortgage-chart{
     width: 1.18rem;
     height: 1.18rem;
-    background: #fff;
-    margin: .1rem auto;
+    margin: .2rem auto 0 auto;
 }
 
 .mortgage .mortgage-count{
@@ -310,15 +316,30 @@ body {
     width: 1rem;
     height: .11rem;
     background: rgb(247, 183, 7);
-    max-width: 1.25rem;
+    max-width: 1.4rem;
     float: left;
     margin-top: .04rem;
+}
+.bar-single .bar-color-1{
+    background: #F55623;
+}
+.bar-single .bar-color-2{
+    background: #F57923;
+}
+.bar-single .bar-color-3{
+    background: #FFAE3E;
+}
+.bar-single .bar-color-4{
+    background: #FFE014;
 }
 
 .bar-single>.percent {
     float: right;
 }
 
+.sale-box{
+    margin-top: .1rem;
+}
 .sale-list{
     height: 2.25rem;
     margin-top: .1rem;
@@ -334,7 +355,6 @@ body {
     height: 98vh;
     flex: 1;
     margin: .1rem 0;
-    background: #555;
 }
 
 /* 中间区域 end */

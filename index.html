@@ -24,7 +24,8 @@
                     <span class="box-title-right">欠费总金额: <span class="title-num">500</span>万</span>
                 </div>
                 <div class="container">
-                    <div class="arrears-chart" id="arrearsChart"></div>
+                    <div class="arrears-chart" id="arrearsChart">
+                    </div>
                     <div class="arrears-list">
                         <div class="arrears-list-item">
                             <div class="arrears-locaction">1、七宝</div>
@@ -123,7 +124,12 @@
             </div>
         </div>
         <!-- 左侧区域 end -->
+
+        <!-- 中间区域 start -->
         <div class="middle-box"></div>
+        <!-- 中间区域 end -->
+
+        <!-- 右侧区域 start -->
         <div class="right-box">
             <div class="right-box-top">
                 <div class="right-box-top-left">
@@ -147,7 +153,7 @@
                             <span class="title-tab-line">|</span>
                             <span class="title-tab">top-5</span>
                         </div>
-                        <div class="achievement-chart">
+                        <div class="achievement-chart" id="achievementChart">
 
                         </div>
                     </div>
@@ -201,28 +207,28 @@
                     </div>
                     <div class="order"><span class="color-red">NO.1</span>七宝</div>
                     <div class="mortgage-normal-text">累计押金-累计欠款</div>
-                    <div class="mortgage-chart"></div>
+                    <div class="mortgage-chart" id="mortgageChart"></div>
                     <div class="mortgage-normal-text">累计押金-累计欠款</div>
                     <div class="mortgage-count"><span class="color-red">-100.00</span>万</div>
                     <div class="mortgage-bar">
                         <div class="bar-single">
                             <div class="location">1、嘉定</div>
-                            <div class="bar"></div>
+                            <div class="bar bar-color-1"></div>
                             <div class="percent">100%</div>
                         </div>
                         <div class="bar-single">
                             <div class="location">1、嘉定</div>
-                            <div class="bar"></div>
+                            <div class="bar bar-color-2"></div>
                             <div class="percent">100%</div>
                         </div>
                         <div class="bar-single">
                             <div class="location">1、嘉定</div>
-                            <div class="bar"></div>
+                            <div class="bar bar-color-3"></div>
                             <div class="percent">100%</div>
                         </div>
                         <div class="bar-single">
                             <div class="location">1、嘉定</div>
-                            <div class="bar"></div>
+                            <div class="bar bar-color-4"></div>
                             <div class="percent">100%</div>
                         </div>
                     </div>
@@ -231,9 +237,9 @@
             <div class="common-box sale-box">
                 <div class="box-title">
                     <span class="font-title">销售额</span>
-                    <span class="title-tab active">top5</span>
+                    <span class="title-tab active">TOP5</span>
                     <span class="title-tab-line">|</span>
-                    <span class="title-tab">top-5</span>
+                    <span class="title-tab">TOP-5</span>
                 </div>
                 <div class="list sale-list">
                     <div class="list-item list-header">
@@ -264,9 +270,77 @@
                         <div class="list-item-td">上月同比</div>
                         <div class="list-item-td">上月环比</div>
                     </div>
+                    <div class="list-item">
+                        <div class="list-item-td">1、七宝</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">上月同比</div>
+                        <div class="list-item-td">上月环比</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-td">1、七宝</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">上月同比</div>
+                        <div class="list-item-td">上月环比</div>
+                    </div>
+                </div>
+            </div>
+            <div class="common-box sale-box">
+                <div class="box-title">
+                    <span class="font-title">客流</span>
+                    <span class="title-tab active">TOP5</span>
+                    <span class="title-tab-line">|</span>
+                    <span class="title-tab">TOP-5</span>
+                </div>
+                <div class="list sale-list">
+                    <div class="list-item list-header">
+                        <div class="list-item-td"></div>
+                        <div class="list-item-td">当月客流</div>
+                        <div class="list-item-td">上月客流</div>
+                        <div class="list-item-td">当月同比</div>
+                        <div class="list-item-td">当月环比</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-td">1、七宝</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">上月同比</div>
+                        <div class="list-item-td">上月环比</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-td">1、七宝</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">上月同比</div>
+                        <div class="list-item-td">上月环比</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-td">1、七宝</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">上月同比</div>
+                        <div class="list-item-td">上月环比</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-td">1、七宝</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">上月同比</div>
+                        <div class="list-item-td">上月环比</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-td">1、七宝</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">上月同比</div>
+                        <div class="list-item-td">上月环比</div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- 右侧区域 end -->
+        
     </div>
 
     <script src="./js/jquery1.10.2.js"></script>

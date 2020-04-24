@@ -11,6 +11,7 @@
     <!-- 柱状图 start -->
     <div id="bar" style="width: 600px;height:400px;"></div>
     <script src="./js/echarts.js"></script>
+    <script src="js/china.js"></script>
     <script>
         var barChart = echarts.init(document.getElementById('bar'));
 
@@ -293,50 +294,191 @@
 </style>
 
 <!-- 列表 start -->
-<div class="list">
-    <div class="list-item">
-        <div class="list-item-td"></div>
-        <div class="list-item-td">当月销售额</div>
-        <div class="list-item-td">上月销售额</div>
-        <div class="list-item-td">当月销售额</div>
-        <div class="list-item-td">当月销售额</div>
-    </div>
-    <div class="list-item">
-        <div class="list-item-td">1、七宝</div>
-        <div class="list-item-td">200万</div>
-        <div class="list-item-td">200万</div>
-        <div class="list-item-td">上月同比</div>
-        <div class="list-item-td">上月环比</div>
-    </div>
-    <div class="list-item">
-        <div class="list-item-td">1、七宝</div>
-        <div class="list-item-td">200万</div>
-        <div class="list-item-td">200万</div>
-        <div class="list-item-td">上月同比</div>
-        <div class="list-item-td">上月环比</div>
-    </div>
-    <div class="list-item">
-        <div class="list-item-td">1、七宝</div>
-        <div class="list-item-td">200万</div>
-        <div class="list-item-td">200万</div>
-        <div class="list-item-td">上月同比</div>
-        <div class="list-item-td">上月环比</div>
-    </div>
+
+<div class="list-item">
+    <div class="list-item-td"></div>
+    <div class="list-item-td">当月销售额</div>
+    <div class="list-item-td">上月销售额</div>
+    <div class="list-item-td">当月销售额</div>
+    <div class="list-item-td">当月销售额</div>
+</div>
+<div class="list-item">
+    <div class="list-item-td">1、七宝</div>
+    <div class="list-item-td">200万</div>
+    <div class="list-item-td">200万</div>
+    <div class="list-item-td">上月同比</div>
+    <div class="list-item-td">上月环比</div>
+</div>
+<div class="list-item">
+    <div class="list-item-td">1、七宝</div>
+    <div class="list-item-td">200万</div>
+    <div class="list-item-td">200万</div>
+    <div class="list-item-td">上月同比</div>
+    <div class="list-item-td">上月环比</div>
+</div>
+<div class="list-item">
+    <div class="list-item-td">1、七宝</div>
+    <div class="list-item-td">200万</div>
+    <div class="list-item-td">200万</div>
+    <div class="list-item-td">上月同比</div>
+    <div class="list-item-td">上月环比</div>
+</div>
 </div>
 <!-- 列表 end -->
 <style>
-    .list{
+    .list {
         line-height: 40px;
     }
+
     .list-item {
         display: flex;
     }
-     .list-item-td {
+
+    .list-item-td {
         flex: 1;
         text-align: right;
     }
-    .list-item-td:first-child{
+
+    .list-item-td:first-child {
         text-align: left;
     }
 </style>
+
+
+<div class="china-map" id="china-map" style="width: 800px;height: 800px; margin: 0 auto"></div>
+<script>
+    var myChart = echarts.init(document.getElementById('china-map'));
+    
+
+    var data = [{
+        name: '云南',
+        value1: 0,
+        value2: 5,
+    }, {
+        name: '辽宁',
+        value1: 0,
+        value2: 10,
+    }, {
+        name: '黑龙江',
+        value1: 0,
+        value2: 15,
+    }];
+
+
+    var resultdata0 = [];
+    var sum0 = 0;
+    var titledata = [];
+    for (var i = 0; i < data.length; i++) {
+        var d0 = {
+            name: data[i].name,
+            value: data[i].value1 + data[i].value2
+        };
+        titledata.push(data[i].name)
+        resultdata0.push(d0);
+        sum0 += data[i].value1 + data[i].value2;
+    }
+
+    function NumDescSort(a, b) {
+        return a.value - b.value;
+    }
+
+    resultdata0.sort(NumDescSort);
+
+    var option = {
+        dataRange: {
+	    	show:false,
+	        x: 'left',
+	        y: 'bottom',
+	        splitList: [
+	            {start: 5, end: 5, color: 'orange'},//当值为5时，区域背景
+	            {start: 10, end: 10, color: '#ff6300'},//当值为10时，区域背景
+	            {start: 15, end: 15, color: 'blue'},//当值为15时，区域背景
+	        ],
+	    },
+        xAxis: [{
+            show: false,
+            position: 'top',
+            type: 'value',
+            boundaryGap: false,
+            splitLine: {
+                show: false
+            },
+            axisLabel: {
+                rotate: 45, 　　　　//刻度旋转45度角
+                textStyle: {
+                }
+            }
+        }],
+        yAxis: [{
+            show: false,
+            type: 'category',
+            data: titledata,
+            axisTick: {
+                alignWithLabel: true
+            }
+        }],
+        series: [{  
+            hoverable: false,
+            z: 1,
+            type: 'map',
+            map: 'china',
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            zoom: 1,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            //roam: true,
+            data: resultdata0
+        }]
+    };
+    myChart.setOption(option);
+
+    
+    myChart.on('hover', function(params){
+        console.log(params)
+        return false
+    })
+
+    //点击事件
+	myChart.on('click', function (params) {//点击事件
+            select_province(params.name);
+            console.log(params)
+	});
+	//初始化省颜色
+	function ini_province(){
+		var ini_len=option.series[0].data.length;
+		for(var i=0;i<ini_len;i++){
+			//初始化颜色
+			option.series[0].data[i].value=5;
+			mycharts.setOption(option);
+		}
+		
+	}
+	//选中省颜色
+	function select_province(province_name){
+		var len=option.series[0].data.length;
+		for(var i=0;i<len;i++){
+			if(option.series[0].data[i].name==province_name){//如果匹配正确
+				//先归零
+				ini_province();
+				//改变颜色
+				option.series[0].data[i].value=10;
+				mycharts.setOption(option);
+			}
+		}
+    }
+    
+    
+</script>
+
+<!-- 32991415 -->
+
 </html>
