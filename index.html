@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>驾驶舱页面</title>
+    <link rel="stylesheet" href="./css/init.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/rem.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 左侧区域 start -->
+        <div class="left-box">
+            <!-- 欠费 -->
+            <div class="common-box arrears">
+                <div class="box-title">
+                    <span class="font-title">欠费</span>
+                    <span class="title-tab active">物管</span>
+                    <span class="title-tab-line">|</span>
+                    <span class="title-tab">租金</span>
+                    <span class="box-title-right">欠费总金额: <span class="title-num">500</span>万</span>
+                </div>
+                <div class="container">
+                    <div class="arrears-chart" id="arrearsChart"></div>
+                    <div class="arrears-list">
+                        <div class="arrears-list-item">
+                            <div class="arrears-locaction">1、七宝</div>
+                            <div class="arrears-count">欠费金额: 50万</div>
+                        </div>
+                        <div class="arrears-list-item">
+                            <div class="arrears-locaction">1、七宝</div>
+                            <div class="arrears-count">欠费金额: 50万</div>
+                        </div>
+                        <div class="arrears-list-item">
+                            <div class="arrears-locaction">1、七宝</div>
+                            <div class="arrears-count">欠费金额: 50万</div>
+                        </div>
+                        <div class="arrears-list-item">
+                            <div class="arrears-locaction">1、七宝</div>
+                            <div class="arrears-count">欠费金额: 50万</div>
+                        </div>
+                        <div class="arrears-list-item">
+                            <div class="arrears-locaction">1、七宝</div>
+                            <div class="arrears-count">欠费金额: 50万</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 收缴率 -->
+            <div class="common-box collection">
+                <div class="box-title">
+                    <span class="font-title">收缴率</span>
+                    <span class="title-tab active">物管</span>
+                    <span class="title-tab-line">|</span>
+                    <span class="title-tab">租金</span>
+                    <span class="box-title-right">集团收缴率: <span class="title-num color-green">100%</span></span>
+                </div>
+                <div class="title-info">
+                    <span>华中: <span class="info-num color-green">90%</span></span>
+                    <span>华中: <span class="info-num color-green">90%</span></span>
+                    <span>华中: <span class="info-num color-red">90%</span></span>
+                </div>
+                <div class="container">
+                    <div class="collection-chart">
+                        <div class="bar-percent-wrapper">
+                            <span class="location">七宝</span>
+                            <span class="percent-text">50%</span>
+                            <div class="bar-percent"></div>
+                        </div>
+                        <div class="bar-percent-wrapper">
+                            <span class="location">七宝</span>
+                            <span class="percent-text">50%</span>
+                            <div class="bar-percent"></div>
+                        </div>
+                        <div class="bar-percent-wrapper">
+                            <span class="location">七宝</span>
+                            <span class="percent-text">50%</span>
+                            <div class="bar-percent"></div>
+                        </div>
+                        <div class="bar-percent-wrapper">
+                            <span class="location">七宝</span>
+                            <span class="percent-text">50%</span>
+                            <div class="bar-percent"></div>
+                        </div>
+                        <div class="bar-percent-wrapper">
+                            <span class="location">七宝</span>
+                            <span class="percent-text">50%</span>
+                            <div class="bar-percent"></div>
+                        </div>
+                    </div>
+                    <div class="collection-chart red-chart">
+                        <div class="bar-percent-wrapper">
+                            <span class="location">七宝</span>
+                            <span class="percent-text">50%</span>
+                            <div class="bar-percent"></div>
+                        </div>
+                        <div class="bar-percent-wrapper">
+                            <span class="location">七宝</span>
+                            <span class="percent-text">50%</span>
+                            <div class="bar-percent"></div>
+                        </div>
+                        <div class="bar-percent-wrapper">
+                            <span class="location">七宝</span>
+                            <span class="percent-text">50%</span>
+                            <div class="bar-percent"></div>
+                        </div>
+                        <div class="bar-percent-wrapper">
+                            <span class="location">七宝</span>
+                            <span class="percent-text">50%</span>
+                            <div class="bar-percent"></div>
+                        </div>
+                        <div class="bar-percent-wrapper">
+                            <span class="location">七宝</span>
+                            <span class="percent-text">50%</span>
+                            <div class="bar-percent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 左侧区域 end -->
+        <div class="middle-box"></div>
+        <div class="right-box">
+            <div class="right-box-top">
+                <div class="right-box-top-left">
+                    <div class="common-box achievement">
+                        <div class="box-title">
+                            <span class="font-title">达成率</span>
+                            <span class="title-tab active">物管</span>
+                            <span class="title-tab-line">|</span>
+                            <span class="title-tab">租金</span>
+                        </div>
+                        <div class="clearfix">
+                            <span class="box-title-right">集团达成率: <span class="title-num color-green">100%</span></span>
+                        </div>
+                        <div class="title-info">
+                            <span>华中: <span class="info-num color-green">90%</span></span>
+                            <span>华中: <span class="info-num color-green">90%</span></span>
+                            <span>华中: <span class="info-num color-red">90%</span></span>
+                        </div>
+                        <div class="data-tab">
+                            <span class="title-tab active">top5</span>
+                            <span class="title-tab-line">|</span>
+                            <span class="title-tab">top-5</span>
+                        </div>
+                        <div class="achievement-chart">
+
+                        </div>
+                    </div>
+                    <div class="common-box lease">
+                        <div class="box-title">
+                            <span class="font-title">租约到期</span>
+                            <span class="box-title-right">10000cm2</span>
+                        </div>
+                        <div class="title-info">
+                            <span>华中: <span class="info-num">90%</span></span>
+                            <span>华中: <span class="info-num">90%</span></span>
+                            <span>华中: <span class="info-num">90%</span></span>
+                        </div>
+                        <div class="list lease-list">
+                            <div class="list-item list-header">
+                                <div class="list-item-td"></div>
+                                <div class="list-item-td">到期租户数</div>
+                                <div class="list-item-td">租户到期总</div>
+                            </div>
+                            <div class="list-item">
+                                <div class="list-item-td">1、七宝</div>
+                                <div class="list-item-td">200万</div>
+                                <div class="list-item-td">200m3</div>
+                            </div>
+                            <div class="list-item">
+                                <div class="list-item-td">1、七宝</div>
+                                <div class="list-item-td">200万</div>
+                                <div class="list-item-td">200m3</div>
+                            </div>
+                            <div class="list-item">
+                                <div class="list-item-td">1、七宝</div>
+                                <div class="list-item-td">200万</div>
+                                <div class="list-item-td">200m3</div>
+                            </div>
+                            <div class="list-item">
+                                <div class="list-item-td">1、七宝</div>
+                                <div class="list-item-td">200万</div>
+                                <div class="list-item-td">200m3</div>
+                            </div>
+                            <div class="list-item">
+                                <div class="list-item-td">1、七宝</div>
+                                <div class="list-item-td">200万</div>
+                                <div class="list-item-td">200m3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="common-box right-box-top-right mortgage">
+                    <div class="box-title">
+                        <span class="font-title">抵不押租</span>
+                    </div>
+                    <div class="order"><span class="color-red">NO.1</span>七宝</div>
+                    <div class="mortgage-normal-text">累计押金-累计欠款</div>
+                    <div class="mortgage-chart"></div>
+                    <div class="mortgage-normal-text">累计押金-累计欠款</div>
+                    <div class="mortgage-count"><span class="color-red">-100.00</span>万</div>
+                    <div class="mortgage-bar">
+                        <div class="bar-single">
+                            <div class="location">1、嘉定</div>
+                            <div class="bar"></div>
+                            <div class="percent">100%</div>
+                        </div>
+                        <div class="bar-single">
+                            <div class="location">1、嘉定</div>
+                            <div class="bar"></div>
+                            <div class="percent">100%</div>
+                        </div>
+                        <div class="bar-single">
+                            <div class="location">1、嘉定</div>
+                            <div class="bar"></div>
+                            <div class="percent">100%</div>
+                        </div>
+                        <div class="bar-single">
+                            <div class="location">1、嘉定</div>
+                            <div class="bar"></div>
+                            <div class="percent">100%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="common-box sale-box">
+                <div class="box-title">
+                    <span class="font-title">销售额</span>
+                    <span class="title-tab active">top5</span>
+                    <span class="title-tab-line">|</span>
+                    <span class="title-tab">top-5</span>
+                </div>
+                <div class="list sale-list">
+                    <div class="list-item list-header">
+                        <div class="list-item-td"></div>
+                        <div class="list-item-td">当月销售额</div>
+                        <div class="list-item-td">上月销售额</div>
+                        <div class="list-item-td">当月销售额</div>
+                        <div class="list-item-td">当月销售额</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-td">1、七宝</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">上月同比</div>
+                        <div class="list-item-td">上月环比</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-td">1、七宝</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">上月同比</div>
+                        <div class="list-item-td">上月环比</div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-item-td">1、七宝</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">200万</div>
+                        <div class="list-item-td">上月同比</div>
+                        <div class="list-item-td">上月环比</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/jquery1.10.2.js"></script>
+    <script src="./js/echarts.js"></script>
+    <script src="./js/js-charts.js"></script>
+
+</body>
+
+</html>

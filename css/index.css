@@ -1,0 +1,340 @@
+body {
+    height: 100vh;
+    background-color: #061734;
+    /* 浏览器不支持时显示 */
+    /* background-image: linear-gradient(#413875, #9198e5); */
+
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+}
+
+/* 通用样式 start */
+.common-box {
+    background: rgba(19, 41, 78, 0.32);
+    border: 1px solid rgba(37, 64, 109, 1);
+    box-sizing: border-box;
+    padding: .2rem;
+    color: #fff;
+}
+
+.color-green {
+    color: #1ABC58 !important;
+}
+
+.color-red {
+    color: #FE4744 !important;
+}
+
+.clearfix {
+    overflow: hidden;
+}
+
+.font-title {
+    font-size: .2rem;
+    margin-right: .1rem;
+}
+
+/* 每个区域的头部栏 */
+.title-tab {
+    font-size: .14rem;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.title-tab-line {
+    font-size: .14rem;
+    color: #ccc;
+
+}
+
+.title-tab.active {
+    color: #49E3C2;
+    cursor: default;
+}
+
+.box-title-right {
+    float: right;
+    color: #ccc;
+    margin-top: .01rem;
+}
+
+.title-num {
+    font-size: .18rem;
+    color: #FE4744;
+}
+
+.title-info {
+    font-size: .12rem;
+    text-align: right;
+    margin-bottom: .1rem;
+}
+
+.title-info>span {
+    margin-left: .15rem;
+}
+
+.info-num.span {
+    margin-left: .15rem;
+}
+
+/* 内容区的tab */
+.data-tab {
+    margin-top: .1rem;
+}
+
+.data-tab .title-tab {
+    font-size: .18rem;
+}
+
+/* 列表 */
+.list {
+    line-height: .25rem;
+}
+
+.list-header{
+    background: #23447C;
+}
+.list-item {
+    display: flex;
+}
+
+.list-item-td {
+    flex: 1;
+    text-align: right;
+    padding: 0 .05rem;
+    box-sizing: border-box;
+}
+
+.list-item-td:first-child {
+    text-align: left;
+}
+
+
+
+
+/* 通用样式 end */
+
+
+/* 左侧区域 start */
+.left-box {
+    width: 5.28rem;
+    height: 98vh;
+    margin: .1rem;
+}
+
+/* 欠费 */
+.arrears {
+    height: 2.63rem;
+}
+
+.arrears-chart {
+    width: 2.58rem;
+    height: 1.1rem;
+    float: left;
+    margin-top: .38rem;
+    background: #eee;
+}
+
+.arrears-list {
+    width: 1.87rem;
+    height: 1.1rem;
+    float: right;
+    margin-top: .38rem;
+}
+
+.arrears-list-item {
+    display: flex;
+    line-height: .22rem;
+}
+
+.arrears-locaction {
+    width: .5rem;
+}
+
+.arrears-count {
+    flex: 1;
+    text-align: right;
+}
+
+/* 收缴率 */
+.collection {
+    margin-top: .1rem;
+}
+
+.collection .container {
+    display: flex;
+}
+
+.collection-chart {
+    width: 2.22rem;
+    flex: 1;
+    margin: 0 .1rem;
+
+}
+
+.bar-percent-wrapper {
+    position: relative;
+    width: 100%;
+    height: .22rem;
+    background: #115640;
+    margin-bottom: .1rem;
+}
+
+.red-chart .bar-percent-wrapper {
+    background: #5F0813;
+}
+
+.bar-percent-wrapper:last-child {
+    margin: 0
+}
+
+.bar-percent-wrapper>span {
+    position: absolute;
+    line-height: .22rem;
+    color: #fff;
+}
+
+.bar-percent-wrapper>.location {
+    left: 10px;
+}
+
+.bar-percent-wrapper>.percent-text {
+    right: 10px;
+}
+
+.bar-percent {
+    width: 100px;
+    height: 100%;
+    background: #1ABC58;
+}
+
+.red-chart .bar-percent {
+    background: #FA493F;
+}
+
+/* 左侧区域 end */
+
+/* 右侧区域 start */
+.right-box {
+    width: 5.85rem;
+    height: 98vh;
+    margin: .1rem;
+}
+
+.right-box-top {
+    display: flex;
+    height: 5.34rem;
+}
+
+.right-box-top>div {
+    flex: 1;
+}
+
+.right-box-top-left {
+    width: 2.88rem;
+    margin-right: .1rem;
+}
+
+.right-box-top-left>div {
+    height: 2.62rem;
+    margin-bottom: .1rem;
+}
+
+.right-box-top-left>div:last-child {
+    margin: 0
+}
+
+.achievement-chart {
+    width: 2.5rem;
+    height: 1rem;
+    background: #aaa;
+    margin-top: .15rem;
+}
+
+.lease .box-title-right {
+    margin-top: .08rem;
+}
+.lease .list{
+    margin-top: .1rem;
+}
+
+.mortgage .order{
+    font-size: .2rem;
+    margin-top: .1rem;
+}
+
+.mortgage .mortgage-normal-text{
+    margin-top: .15rem;
+}
+
+.mortgage .mortgage-chart{
+    width: 1.18rem;
+    height: 1.18rem;
+    background: #fff;
+    margin: .1rem auto;
+}
+
+.mortgage .mortgage-count{
+    font-size: .12rem;
+    margin-top: .05rem;
+}
+.mortgage .mortgage-count > span{
+    font-size: .28rem;
+    margin-right: .05rem;
+}
+
+.mortgage-bar{
+    margin-top: .2rem;
+}
+.bar-single {
+    width: 100%;
+    overflow: hidden;
+    height: .2rem;;
+    margin: .2rem 0;
+}
+
+.bar-single>.location {
+    float: left;
+    width: .7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.bar-single>.bar {
+    width: 1rem;
+    height: .11rem;
+    background: rgb(247, 183, 7);
+    max-width: 1.25rem;
+    float: left;
+    margin-top: .04rem;
+}
+
+.bar-single>.percent {
+    float: right;
+}
+
+.sale-list{
+    height: 2.25rem;
+    margin-top: .1rem;
+}
+
+
+
+/* 右侧区域 end */
+
+
+/* 中间区域 start */
+.middle-box {
+    height: 98vh;
+    flex: 1;
+    margin: .1rem 0;
+    background: #555;
+}
+
+/* 中间区域 end */

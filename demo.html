@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首屏</title>
+</head>
+
+<body>
+    <!-- 柱状图 start -->
+    <div id="bar" style="width: 600px;height:400px;"></div>
+    <script src="./js/echarts.js"></script>
+    <script>
+        var barChart = echarts.init(document.getElementById('bar'));
+
+        // 指定图表的配置项和数据
+        var barOption = {
+
+            // 坐标轴X
+            xAxis: {
+                type: 'category',
+                axisTick: {
+                    show: false
+                },
+                data: ['集团', '华中', '华南', '华北']
+            },
+
+            // 坐标轴y
+            yAxis: {
+                type: 'value',
+                show: false
+            },
+            series: [{
+                data: [120, 200, 150, 80],
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        //柱形图圆角，初始化效果
+                        barBorderRadius: [50, 50, 0, 0],
+
+                        // 柱状图上方文字
+                        label: {
+                            formatter: "111人",
+                            show: true,
+                            position: "top",
+                            textStyle: {
+                                fontWeight: "bolder",
+                                fontSize: "12",
+                                color: "#000"
+                            }
+                        },
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                { offset: 0, color: '#06B5D7' },                   //柱图渐变色
+                                { offset: 0.5, color: '#44C0C1' },                 //柱图渐变色
+                                { offset: 1, color: '#71C8B1' },                   //柱图渐变色
+                            ]
+                        )
+
+                    },
+                    emphasis: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                { offset: 0, color: '#71C8B1' },                  //柱图高亮渐变色
+                                { offset: 0.7, color: '#44C0C1' },                //柱图高亮渐变色
+                                { offset: 1, color: '#06B5D7' }                   //柱图高亮渐变色
+                            ]
+                        )
+                    }
+                },
+                barWidth: 10,
+                barGap: '0%'
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        barChart.setOption(barOption);
+    </script>
+    <!-- 柱状图 end -->
+</body>
+
+
+<!-- 南丁格尔玫瑰图 start -->
+<div id="rose" style="width: 600px;height:400px;"></div>
+
+<script>
+    var roseChart = echarts.init(document.getElementById('rose'));
+
+    var roseOption = {
+        title: {
+            text: '南丁格尔玫瑰图',
+            subtext: '纯属虚构',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        legend: {
+            left: 'center',
+            top: 'bottom',
+            data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8']
+        },
+        graphic: [{ //环形图中间添加文字
+            type: 'text', //通过不同top值可以设置上下显示
+            left: 'center',
+            top: '45%',
+            style: {
+                text: '环图中添加颜色' + '\n' + '和series平级',
+                textAlign: 'center',
+                fill: 'blue', //文字的颜色
+                width: 30,
+                height: 30,
+                fontSize: 12,
+                fontFamily: "Microsoft YaHei"
+            }
+        }],
+
+        series: [
+
+            {
+                name: '面积模式',
+                type: 'pie',
+                radius: [30, 110],
+                roseType: 'area',
+                data: [
+                    { value: 10, name: 'rose1' },
+                    { value: 5, name: 'rose2' },
+                    { value: 15, name: 'rose3' },
+                    { value: 25, name: 'rose4' },
+                    { value: 20, name: 'rose5' },
+                    { value: 35, name: 'rose6' },
+                    { value: 30, name: 'rose7' },
+                    { value: 40, name: 'rose8' }
+                ],
+                label: {
+                    formatter: "111人",
+                    show: true,
+                    position: "top",
+                    textStyle: {
+                        fontWeight: "bolder",
+                        fontSize: "12",
+                        color: "#000"
+                    }
+                },
+            },
+        ]
+    };
+    roseChart.setOption(roseOption);
+</script>
+<!-- 南丁格尔玫瑰图 end -->
+
+<!-- 圆环图 start -->
+<div id="ring" style="width: 600px;height:400px;"></div>
+
+<script>
+    var ringChart = echarts.init(document.getElementById('ring'));
+
+    var ringOptions = {
+
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        graphic: [{ //环形图中间添加文字
+            type: 'text', //通过不同top值可以设置上下显示
+            left: 'center',
+            top: '45%',
+            style: {
+                text: '环图中添加颜色' + '\n' + '和series平级',
+                textAlign: 'center',
+                fill: 'blue', //文字的颜色
+                width: 30,
+                height: 30,
+                fontSize: 20,
+                fontFamily: "Microsoft YaHei"
+            }
+        }],
+        series: [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: [
+                    { value: 335, name: '直接访问' },
+                    { value: 310, name: '邮件营销' },
+                    { value: 234, name: '联盟广告' },
+                    { value: 135, name: '视频广告' },
+                    { value: 1548, name: '搜索引擎' }
+                ]
+            }
+        ]
+    };
+
+
+    ringChart.setOption(ringOptions);
+
+</script>
+<!-- 圆环图 end -->
+
+
+<!-- 双色百分比条形图 start -->
+<div class="bar-percent-wrapper">
+    <span class="location">七宝</span>
+    <span class="percent-text">50%</span>
+    <div class="bar-percent"></div>
+</div>
+
+<style>
+    .bar-percent-wrapper {
+        position: relative;
+        width: 200px;
+        height: 40px;
+        background: rgb(177, 195, 241);
+    }
+
+    .bar-percent-wrapper>span {
+        position: absolute;
+        line-height: 40px;
+        color: #fff;
+    }
+
+    .bar-percent-wrapper>.location {
+        left: 10px;
+    }
+
+    .bar-percent-wrapper>.percent-text {
+        right: 10px;
+    }
+
+    .bar-percent {
+        width: 100px;
+        height: 100%;
+        background: rgb(34, 89, 104);
+    }
+</style>
+
+<!-- 双色百分比条形图 end -->
+
+<!-- 单色百分比条形图 start -->
+<div class="bar-single">
+    <div class="location">1、嘉定</div>
+    <div class="bar"></div>
+    <div class="percent">100%</div>
+</div>
+<!-- 单色百分比条形图 end -->
+<style>
+    .bar-single {
+        width: 300px;
+        color: #000;
+        line-height: 40px;
+        overflow: hidden;
+    }
+
+    .bar-single>.location {
+        width: 60px;
+        float: left;
+    }
+
+    .bar-single>.bar {
+        width: 100px;
+        height: 40px;
+        background: rgb(247, 183, 7);
+        max-width: 120px;
+        float: left;
+    }
+
+    .bar-single>.percent {
+        float: right;
+    }
+</style>
+
+<!-- 列表 start -->
+<div class="list">
+    <div class="list-item">
+        <div class="list-item-td"></div>
+        <div class="list-item-td">当月销售额</div>
+        <div class="list-item-td">上月销售额</div>
+        <div class="list-item-td">当月销售额</div>
+        <div class="list-item-td">当月销售额</div>
+    </div>
+    <div class="list-item">
+        <div class="list-item-td">1、七宝</div>
+        <div class="list-item-td">200万</div>
+        <div class="list-item-td">200万</div>
+        <div class="list-item-td">上月同比</div>
+        <div class="list-item-td">上月环比</div>
+    </div>
+    <div class="list-item">
+        <div class="list-item-td">1、七宝</div>
+        <div class="list-item-td">200万</div>
+        <div class="list-item-td">200万</div>
+        <div class="list-item-td">上月同比</div>
+        <div class="list-item-td">上月环比</div>
+    </div>
+    <div class="list-item">
+        <div class="list-item-td">1、七宝</div>
+        <div class="list-item-td">200万</div>
+        <div class="list-item-td">200万</div>
+        <div class="list-item-td">上月同比</div>
+        <div class="list-item-td">上月环比</div>
+    </div>
+</div>
+<!-- 列表 end -->
+<style>
+    .list{
+        line-height: 40px;
+    }
+    .list-item {
+        display: flex;
+    }
+     .list-item-td {
+        flex: 1;
+        text-align: right;
+    }
+    .list-item-td:first-child{
+        text-align: left;
+    }
+</style>
+</html>
