@@ -542,8 +542,8 @@ body {
 }
 .map-info-preview div{
     width: 1rem;
-    margin-right: .22rem;
     flex-direction: column;
+    height: 50px;
 
 }
 
