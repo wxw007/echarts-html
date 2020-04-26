@@ -513,5 +513,25 @@
 </script>
 
 <!--MIMA 32991415 -->
+<!-- <script>
 
+  var text2 = ''
+  text2 += `<div class="Recipes-device-title">
+              烹饪工具
+          </div>`
+  msg.cookToolList.map((item, index) => {
+      text2 += `<div class="Recipes-devicebox">
+                  < img src="${item.toolImg}">
+                  <div class="Recipes-devicebox-name">${item.toolName}</div>
+              </div>`
+  })
+ 
+
+  if(msg.cookToolList && msg.cookToolList.length>0){
+    $('.Recipes-device').html(text2);
+    $('.Recipes-device').show()
+  } else {
+    $('.Recipes-device').hide()
+  }
+</script> -->
 </html>

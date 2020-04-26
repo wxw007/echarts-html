@@ -342,7 +342,7 @@ body {
     margin-top: .1rem;
 }
 .sale-list{
-    height: 2.25rem;
+    height: 1.6rem;
     margin-top: .1rem;
 }
 
@@ -419,5 +419,133 @@ body {
     width: 100%;
     height: 100%;
 }
+.map-box {
+    position: relative;
+}
+
+.map-box .map-info {
+    color: #fff;
+    position: absolute;
+    z-index: 100;
+    top: 1.6rem;
+    left: 1rem;
+    width: 2.78rem;
+    height: 4.1rem;
+    background:rgba(76,125,208,0.2);
+    border: 1px solid #50D3E3;
+    /* display: none; */
+    box-sizing: border-box;
+    padding: 0.1rem .18rem;
+}
+
+.map-box .map-info .x{
+    position: absolute;
+    right: .1rem;
+    top: -.05rem;
+    color: #50E3C2;
+    font-size: .32rem;
+    transform: rotate(45deg);
+    transform-origin: 50% 50%;
+}
+.map-box .map-location{
+    font-size: .24rem;
+}
+
+.map-info-preview {
+    display: flex;
+    margin-top: .05rem;
+    font-size: .14rem;
+}
+.map-info-preview .num{
+    font-size: .24rem;
+    color: #70FFF9;
+}
+.project-num{
+    width: .65rem;
+}
+.area-count{
+    flex: 1;
+}
+
+.map-project-tab{
+    margin-top: .15rem;
+    font-size: .14rem;
+}
+.map-project-tab > span{
+    cursor: pointer;
+    opacity: .7;
+}
+.map-project-tab > .active{
+    color: #50E3C2;
+    cursor: default;
+}
+
+.map-info .project-list{
+    height: 2.46rem;
+    font-size: .14rem;
+    overflow: auto;
+}
+.map-info .project-list-row{
+    display: flex;
+    margin: .05rem 0;
+    box-sizing: border-box;
+    padding: 0 .1rem;
+    cursor: pointer;
+}
+.map-info .project-list-row:hover{
+    background:rgba(149,188,255,0.2);
+    transition: all .2s;
+    -webkit-transition: all .2s;
+}
+.map-info .project-list-row.active{
+    background:rgba(149,188,255,0.2);
+}
+.map-info .project-list-row .project-name{
+    width: .65rem;
+}
+.map-info .project-list-row .project-date{
+    width: 1.5rem;
+}
+.map-info .project-list-row .project-area{
+    flex: 1;
+}
+
+.map-box .map-info-detail {
+    color: #fff;
+    position: absolute;
+    z-index: 100;
+    top: 2.1rem;
+    left: 3.9rem;
+    width: 2.78rem;
+    height: 3.1rem;
+    background:rgba(76,125,208,0.2);
+    border: 1px solid #50D3E3;
+    /* display: none; */
+    box-sizing: border-box;
+    padding: 0.1rem .18rem;
+}
+
+.map-box .map-info-detail .x{
+    position: absolute;
+    right: .1rem;
+    top: -.05rem;
+    color: #50E3C2;
+    font-size: .32rem;
+    transform: rotate(45deg);
+    transform-origin: 50% 50%;
+}
+
+.map-info-preview{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+.map-info-preview div{
+    width: 1rem;
+    margin-right: .22rem;
+    flex-direction: column;
+
+}
+
 
 /* 中间区域 end */

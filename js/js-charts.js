@@ -202,7 +202,7 @@ function mortgageChartRender() {
         series: [
             {
                 hoverAnimation: false,
-                clickable:false,
+                clickable: false,
                 name: '访问来源',
                 type: 'pie',
                 radius: ['90%', '100%'],
@@ -234,7 +234,7 @@ function mortgageChartRender() {
 }
 
 // 地图
-function mapRender(){
+function mapRender() {
     var myChart = echarts.init(document.getElementById('china-map'));
 
 
@@ -242,19 +242,175 @@ function mapRender(){
         name: '浙江',
         value1: 0,
         value2: 5,
-    },{
+    }, {
         name: '山东',
         value1: 0,
         value2: 5,
-    },{
-        name: '上海',
-        value1: 0,
-        value2: 5,
-    },{
+    }, {
         name: '河南',
         value1: 0,
         value2: 5,
-    }];
+    },
+    {
+        name: '内蒙古',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '黑龙江',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '辽宁',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '吉林',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '北京',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '天津',
+        value1: 0,
+        value2: 0,
+    }, {
+        name: '河北',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '河南',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '陕西',
+        value1: 0,
+        value2: 0,
+    }, {
+        name: '山西',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '江苏',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '上海',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '湖北',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '湖南',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '福建',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '江西',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '广东',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '广西',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '澳门',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '香港',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '海南',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '云南',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '贵州',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '四川',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '重庆',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '青海',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '西藏',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '新疆',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '甘肃',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '宁夏',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '台湾',
+        value1: 0,
+        value2: 0,
+    },
+    {
+        name: '安徽',
+        value1: 0,
+        value2: 0,
+    }
+
+    ];
 
 
     var resultdata0 = [];
@@ -282,9 +438,9 @@ function mapRender(){
             x: 'left',
             y: 'bottom',
             splitList: [
-                { start: 5, end: 5, color: '#061734' },//当值为5时，区域背景
-                { start: 0, end: 0, color: '#aaa' },//当值为0时，区域背景
-               
+                { start: 5, end: 5, color: '#5EA8FF' },//当值为5时，区域背景
+                { start: 0, end: 0, color: '#061734' },//当值为0时，区域背景
+
             ],
         },
         xAxis: [{
@@ -309,9 +465,9 @@ function mapRender(){
                 alignWithLabel: true
             }
         }],
-        
+
         series: [{
-            
+
             hoverable: false,
             z: 1,
             type: 'map',
@@ -321,9 +477,18 @@ function mapRender(){
             top: 0,
             bottom: 0,
             zoom: 1,
+            itemStyle: {
+                normal: {
+                    borderColor: "#fff",
+                },
+            },
             label: {
                 normal: {
-                    show: true
+                    show: false, //显示省份文字
+                    textStyle: {
+                        fontSize: 12,
+                        color: '#fff'
+                    },
                 },
                 emphasis: {
                     show: true
@@ -346,7 +511,7 @@ function mapRender(){
     myChart.on('click', function (params) {//点击事件
         var mapInfo = document.getElementById('mapInfo');
         console.log(params)
-        if(!params.data || params.data.value !== 5){
+        if (!params.data || params.data.value !== 5) {
             mapInfo.style.display = 'none'
             return false
         }
@@ -358,7 +523,7 @@ function mapRender(){
         var ini_len = option.series[0].data.length;
         for (var i = 0; i < ini_len; i++) {
             //初始化颜色
-            option.series[0].data[i].value = 5;
+            option.series[0].data[i].value = 0;
             myChart.setOption(option);
         }
 
@@ -388,4 +553,4 @@ function chartsRender() {
     mortgageChartRender();
     mapRender()
 }
-setTimeout(chartsRender, 300)
+setTimeout(chartsRender, 100)
