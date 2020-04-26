@@ -1,4 +1,5 @@
 body {
+    display: none;
     height: 100vh;
     color: #fff;
     background-color: #061734;
@@ -413,7 +414,7 @@ body {
 /* 地图 */
 .map-box{
     margin-top: .2rem;
-    height: 6.8rem;
+    height: 5.85rem;
 }
 .china-map{
     width: 100%;
@@ -433,15 +434,16 @@ body {
     height: 4.1rem;
     background:rgba(76,125,208,0.2);
     border: 1px solid #50D3E3;
-    /* display: none; */
+    display: none;
     box-sizing: border-box;
     padding: 0.1rem .18rem;
 }
 
-.map-box .map-info .x{
+.map-box .x{
     position: absolute;
+    cursor: pointer;
     right: .1rem;
-    top: -.05rem;
+    top: 0rem;
     color: #50E3C2;
     font-size: .32rem;
     transform: rotate(45deg);
@@ -481,15 +483,15 @@ body {
 }
 
 .map-info .project-list{
-    height: 2.46rem;
+    height: 2.36rem;
     font-size: .14rem;
     overflow: auto;
+    margin-top: .1rem;
 }
 .map-info .project-list-row{
     display: flex;
-    margin: .05rem 0;
     box-sizing: border-box;
-    padding: 0 .1rem;
+    padding: .025rem .1rem;
     cursor: pointer;
 }
 .map-info .project-list-row:hover{
@@ -499,6 +501,7 @@ body {
 }
 .map-info .project-list-row.active{
     background:rgba(149,188,255,0.2);
+    color: #70FFF9;
 }
 .map-info .project-list-row .project-name{
     width: .65rem;
@@ -520,7 +523,7 @@ body {
     height: 3.1rem;
     background:rgba(76,125,208,0.2);
     border: 1px solid #50D3E3;
-    /* display: none; */
+    display: none;
     box-sizing: border-box;
     padding: 0.1rem .18rem;
 }
@@ -538,13 +541,44 @@ body {
 .map-info-preview{
     flex-wrap: wrap;
     display: flex;
-    justify-content: center;
 }
-.map-info-preview div{
-    width: 1rem;
+.map-info-preview> div{
+    width: .7rem;
     flex-direction: column;
-    height: 50px;
+    margin-bottom: .1rem;
 
+}
+
+.project-detail-list{
+    height: 1.22rem;
+    overflow: auto;
+}
+.project-detail-list-row{
+    display: flex;
+    margin: .05rem 0;
+}
+.project-detail-list-row .type{
+    width: 1rem;
+    /* 0.8 */
+}
+.project-detail-list-row .count{
+    width: .8rem;
+}
+.project-detail-list-row .order{
+    flex: 1;
+}
+
+.middle-bottom{
+    display: flex;
+    height: 2.35rem;
+    margin-top: .2rem;
+}
+.middle-bottom > div{
+    flex: 1;
+    border: 1px solid #25406D;
+}
+.middle-bottom-left{
+    margin-right: .1rem;
 }
 
 

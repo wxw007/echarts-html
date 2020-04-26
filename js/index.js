@@ -236,8 +236,6 @@ function mortgageChartRender() {
 // 地图
 function mapRender() {
     var myChart = echarts.init(document.getElementById('china-map'));
-
-
     var data = [{
         name: '浙江',
         value1: 0,
@@ -254,7 +252,7 @@ function mapRender() {
     {
         name: '内蒙古',
         value1: 0,
-        value2: 0,
+        value2: 5,
     },
     {
         name: '黑龙江',
@@ -282,11 +280,6 @@ function mapRender() {
         value2: 0,
     }, {
         name: '河北',
-        value1: 0,
-        value2: 0,
-    },
-    {
-        name: '河南',
         value1: 0,
         value2: 0,
     },
@@ -409,10 +402,7 @@ function mapRender() {
         value1: 0,
         value2: 0,
     }
-
     ];
-
-
     var resultdata0 = [];
     var sum0 = 0;
     var titledata = [];
@@ -479,7 +469,7 @@ function mapRender() {
             zoom: 1,
             itemStyle: {
                 normal: {
-                    borderColor: "#fff",
+                    borderColor: "#999", // 省份边界的颜色
                 },
             },
             label: {
@@ -543,14 +533,45 @@ function mapRender() {
     }
 }
 
-
-
 // 由于页面使用了rem单位,所以需要在页面完全渲染完成之后再绘制图表, 否则图表展不开 ！
-
 function chartsRender() {
     arrearsChartRender();
     achievementChartRender();
     mortgageChartRender();
     mapRender()
 }
-setTimeout(chartsRender, 100)
+
+// 地图信息-二级弹框
+function mapInfoDetailAlert() {
+    $('.project-list').on('click', '.project-list-row', function () {
+        $('#mapInfoDetail').show()
+        $(this).addClass('active').siblings().removeClass('active');
+    })
+}
+
+// 关闭地图弹框
+function closeMapAlert() {
+    $('.map-info .x').click(function () {
+        $('.map-info').hide();
+        $('.map-info-detail').hide();
+    })
+
+    $('.map-info-detail .x').click(function () {
+        $('.map-info-detail').hide();
+    })
+}
+
+// 页面渲染完成后展示页面(防止rem抖动)
+function showPage() {
+    $('body').show();
+}
+
+// 页面初始化
+function pageInit() {
+    setTimeout(chartsRender,30)
+    mapInfoDetailAlert();
+    closeMapAlert();
+    showPage();
+}
+
+pageInit()
