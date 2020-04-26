@@ -233,6 +233,151 @@ function mortgageChartRender() {
     mortgageChart.setOption(ringOptions);
 }
 
+// 地图
+function mapRender(){
+    var myChart = echarts.init(document.getElementById('china-map'));
+
+
+    var data = [{
+        name: '浙江',
+        value1: 0,
+        value2: 5,
+    },{
+        name: '山东',
+        value1: 0,
+        value2: 5,
+    },{
+        name: '上海',
+        value1: 0,
+        value2: 5,
+    },{
+        name: '河南',
+        value1: 0,
+        value2: 5,
+    }];
+
+
+    var resultdata0 = [];
+    var sum0 = 0;
+    var titledata = [];
+    for (var i = 0; i < data.length; i++) {
+        var d0 = {
+            name: data[i].name,
+            value: data[i].value1 + data[i].value2
+        };
+        titledata.push(data[i].name)
+        resultdata0.push(d0);
+        sum0 += data[i].value1 + data[i].value2;
+    }
+
+    function NumDescSort(a, b) {
+        return a.value - b.value;
+    }
+
+    resultdata0.sort(NumDescSort);
+
+    var option = {
+        dataRange: {
+            show: false,
+            x: 'left',
+            y: 'bottom',
+            splitList: [
+                { start: 5, end: 5, color: '#061734' },//当值为5时，区域背景
+                { start: 0, end: 0, color: '#aaa' },//当值为0时，区域背景
+               
+            ],
+        },
+        xAxis: [{
+            show: false,
+            position: 'top',
+            type: 'value',
+            boundaryGap: false,
+            splitLine: {
+                show: false
+            },
+            axisLabel: {
+                rotate: 45, 　　　　//刻度旋转45度角
+                textStyle: {
+                }
+            }
+        }],
+        yAxis: [{
+            show: false,
+            type: 'category',
+            data: titledata,
+            axisTick: {
+                alignWithLabel: true
+            }
+        }],
+        
+        series: [{
+            
+            hoverable: false,
+            z: 1,
+            type: 'map',
+            map: 'china',
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            zoom: 1,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            //roam: true,
+            data: resultdata0
+        }]
+    };
+    myChart.setOption(option);
+
+
+    // 设置鼠标滑过的样式
+    myChart.on('mousemove', function (params) {
+        params.value = 100;
+        myChart.setOption(option);
+    })
+
+    //点击事件
+    myChart.on('click', function (params) {//点击事件
+        var mapInfo = document.getElementById('mapInfo');
+        console.log(params)
+        if(!params.data || params.data.value !== 5){
+            mapInfo.style.display = 'none'
+            return false
+        }
+        mapInfo.style.display = 'block'
+
+    });
+    //初始化省颜色
+    function ini_province() {
+        var ini_len = option.series[0].data.length;
+        for (var i = 0; i < ini_len; i++) {
+            //初始化颜色
+            option.series[0].data[i].value = 5;
+            myChart.setOption(option);
+        }
+
+    }
+    //选中省颜色
+    function select_province(province_name) {
+        var len = option.series[0].data.length;
+        for (var i = 0; i < len; i++) {
+            if (option.series[0].data[i].name == province_name) {//如果匹配正确
+                //先归零
+                ini_province();
+                //改变颜色
+                option.series[0].data[i].value = 15;
+                myChart.setOption(option);
+            }
+        }
+    }
+}
+
 
 
 // 由于页面使用了rem单位,所以需要在页面完全渲染完成之后再绘制图表, 否则图表展不开 ！
@@ -241,5 +386,6 @@ function chartsRender() {
     arrearsChartRender();
     achievementChartRender();
     mortgageChartRender();
+    mapRender()
 }
 setTimeout(chartsRender, 300)

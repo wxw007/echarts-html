@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    color: #fff;
     background-color: #061734;
     /* 浏览器不支持时显示 */
     /* background-image: linear-gradient(#413875, #9198e5); */
@@ -355,6 +356,68 @@ body {
     height: 98vh;
     flex: 1;
     margin: .1rem 0;
+}
+
+.middle-top{
+    overflow: hidden;
+}
+.middle-title{
+    float: left;
+    font-size: .4rem;
+
+}
+.date-picker{
+    float: right;
+    margin-top: .2rem;
+    height: .3rem;
+    width: 2rem;
+    background: #fff;
+    opacity: .3;
+}
+
+.project-info-box{
+    display: flex;
+    margin-top: .2rem;
+}
+.project-info-box > div{
+    flex: 1;
+    margin-top: .1rem;
+}
+.project-info-box > .on-business{
+    margin-right: .5rem;
+}
+.project-info-box > .preparation{
+    margin-right: .2rem;
+}
+
+.project-info-row{
+    display: flex;
+    margin-top: .1rem;
+}
+.project-info-row > .project-info-item{
+    font-size: .14rem;
+    line-height: .2rem;
+}
+.project-info-row.data .project-info-item{
+    color:#70FFF9;
+    font-size: .3rem;
+}
+.project-info-item:first-child{
+    width: .8rem;
+}
+.project-info-item:not(:first-child){
+    flex-basis: .5rem;
+    flex: 1
+}
+
+/* 地图 */
+.map-box{
+    margin-top: .2rem;
+    height: 6.8rem;
+}
+.china-map{
+    width: 100%;
+    height: 100%;
 }
 
 /* 中间区域 end */
