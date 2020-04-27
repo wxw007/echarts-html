@@ -563,7 +563,7 @@ function closeMapAlert() {
 
 // 页面渲染完成后展示页面(防止rem抖动)
 function showPage() {
-    $('body').show();
+    $('body').css({'opacity': 1})
 }
 
 // 页面初始化
@@ -571,7 +571,7 @@ function pageInit() {
     setTimeout(chartsRender,30)
     mapInfoDetailAlert();
     closeMapAlert();
-    showPage();
+    setTimeout(showPage, 40)
 }
 
 pageInit()

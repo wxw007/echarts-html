@@ -1,5 +1,5 @@
 body {
-    display: none;
+    opacity: 0;
     height: 100vh;
     color: #fff;
     background-color: #061734;
@@ -11,6 +11,7 @@ body {
 .wrapper {
     width: 100vw;
     height: 100vh;
+    display: -webkit-box;
     display: flex;
 
 }
@@ -99,6 +100,7 @@ body {
 }
 
 .list-item {
+    display: -webkit-box;
     display: flex;
     height: .2rem;
     line-height: .2rem;
@@ -114,7 +116,8 @@ body {
 }
 
 .list-item-td {
-    flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
     text-align: right;
     padding: 0 .05rem;
     box-sizing: border-box;
@@ -158,6 +161,7 @@ body {
 }
 
 .arrears-list-item {
+    display: -webkit-box;
     display: flex;
     line-height: .22rem;
 }
@@ -167,7 +171,8 @@ body {
 }
 
 .arrears-count {
-    flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
     text-align: right;
 }
 
@@ -177,12 +182,14 @@ body {
 }
 
 .collection .container {
+    display: -webkit-box;
     display: flex;
 }
 
 .collection-chart {
     width: 2.22rem;
-    flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
     margin: 0 .1rem;
 
 }
@@ -237,12 +244,14 @@ body {
 }
 
 .right-box-top {
+    display: -webkit-box;
     display: flex;
     height: 5.34rem;
 }
 
 .right-box-top>div {
-    flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
 }
 
 .right-box-top-left {
@@ -355,7 +364,8 @@ body {
 /* 中间区域 start */
 .middle-box {
     height: 98vh;
-    flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
     margin: .1rem 0;
 }
 
@@ -377,11 +387,14 @@ body {
 }
 
 .project-info-box{
+    display: -webkit-box;
     display: flex;
     margin-top: .2rem;
+    font-size: .14rem;
 }
 .project-info-box > div{
-    flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
     margin-top: .1rem;
 }
 .project-info-box > .on-business{
@@ -392,11 +405,11 @@ body {
 }
 
 .project-info-row{
+    display: -webkit-box;
     display: flex;
     margin-top: .1rem;
 }
 .project-info-row > .project-info-item{
-    font-size: .14rem;
     line-height: .2rem;
 }
 .project-info-row.data .project-info-item{
@@ -408,7 +421,8 @@ body {
 }
 .project-info-item:not(:first-child){
     flex-basis: .5rem;
-    flex: 1
+    -webkit-box-flex: 1;
+            flex: 1
 }
 
 /* 地图 */
@@ -428,7 +442,7 @@ body {
     color: #fff;
     position: absolute;
     z-index: 100;
-    top: 1.6rem;
+    top: 0.6rem;
     left: 1rem;
     width: 2.78rem;
     height: 4.1rem;
@@ -446,14 +460,17 @@ body {
     top: 0rem;
     color: #50E3C2;
     font-size: .32rem;
-    transform: rotate(45deg);
-    transform-origin: 50% 50%;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
 }
 .map-box .map-location{
     font-size: .24rem;
 }
 
 .map-info-preview {
+    display: -webkit-box;
     display: flex;
     margin-top: .05rem;
     font-size: .14rem;
@@ -466,7 +483,8 @@ body {
     width: .65rem;
 }
 .area-count{
-    flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
 }
 
 .map-project-tab{
@@ -489,6 +507,7 @@ body {
     margin-top: .1rem;
 }
 .map-info .project-list-row{
+    display: -webkit-box;
     display: flex;
     box-sizing: border-box;
     padding: .025rem .1rem;
@@ -510,14 +529,15 @@ body {
     width: 1.5rem;
 }
 .map-info .project-list-row .project-area{
-    flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
 }
 
 .map-box .map-info-detail {
     color: #fff;
     position: absolute;
     z-index: 100;
-    top: 2.1rem;
+    top: 1.1rem;
     left: 3.9rem;
     width: 2.78rem;
     height: 3.1rem;
@@ -534,17 +554,22 @@ body {
     top: -.05rem;
     color: #50E3C2;
     font-size: .32rem;
-    transform: rotate(45deg);
-    transform-origin: 50% 50%;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
 }
 
 .map-info-preview{
     flex-wrap: wrap;
+    display: -webkit-box;
     display: flex;
 }
 .map-info-preview> div{
     width: .7rem;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
     margin-bottom: .1rem;
 
 }
@@ -554,6 +579,7 @@ body {
     overflow: auto;
 }
 .project-detail-list-row{
+    display: -webkit-box;
     display: flex;
     margin: .05rem 0;
 }
@@ -565,16 +591,19 @@ body {
     width: .8rem;
 }
 .project-detail-list-row .order{
-    flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
 }
 
 .middle-bottom{
+    display: -webkit-box;
     display: flex;
     height: 2.35rem;
     margin-top: .2rem;
 }
 .middle-bottom > div{
-    flex: 1;
+    -webkit-box-flex: 1;
+            flex: 1;
     border: 1px solid #25406D;
 }
 .middle-bottom-left{

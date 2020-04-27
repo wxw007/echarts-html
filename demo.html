@@ -376,15 +376,15 @@
         name: '浙江',
         value1: 0,
         value2: 5,
-    },{
+    }, {
         name: '山东',
         value1: 0,
         value2: 5,
-    },{
+    }, {
         name: '上海',
         value1: 0,
         value2: 5,
-    },{
+    }, {
         name: '河南',
         value1: 0,
         value2: 5,
@@ -478,7 +478,7 @@
     myChart.on('click', function (params) {//点击事件
         var mapInfo = document.getElementById('mapInfo');
         console.log(params)
-        if(!params.data || params.data.value !== 5){
+        if (!params.data || params.data.value !== 5) {
             mapInfo.style.display = 'none'
             return false
         }
@@ -508,9 +508,104 @@
             }
         }
     }
+</script>
 
+
+<!-- 怪异的图-有毒 -->
+<div class="chart-wrap">
+    <div class="chart-item r1"></div>
+    <div class="chart-item r2"></div>
+    <div class="chart-item r3 l3"></div>
+    <div class="chart-item r4"></div>
+    <div class="chart-item r5"></div>
+    <div class="chart-item r6"></div>
+    <div class="chart-item r7"></div>
+    <div class="chart-item r8"></div>
+    <div class="chart-item r9"></div>
+    <div class="chart-item r10"></div>
+</div>
+<div class="chart-wrap c2">
+    <div class="chart-item r1"></div>
+    <div class="chart-item r2"></div>
+    <div class="chart-item r3 l3"></div>
+    <div class="chart-item r4"></div>
+    <div class="chart-item r5"></div>
+    <div class="chart-item r6"></div>
+    <div class="chart-item r7"></div>
+    <div class="chart-item r8"></div>
+    <div class="chart-item r9"></div>
+    <div class="chart-item r10"></div>
+</div>
+
+<style>
+    .chart-wrap{
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+        border: 1px solid #aaa;
+        position: relative;
+    }
+    .chart-wrap.c2{
+        transform: rotate(180deg);
+    }
+    .chart-item {
+        width: 0;
+        height: 0;
+        border-top: 200px solid black;
+        border-right: 15px solid transparent;
+        border-left: 15px solid transparent;
+        transform-origin: 50% 200px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+    }
+    .chart-item.l3{
+        /* border-top: 300px solid black; */
+        transform: translateX(-50%) rotate(-46deg) scale(1.2);
+    }
+
+    /* 每个偏移单位为18度 */
+    .r1{
+        transform: translateX(-50%) rotate(-82deg);
+    }
+    .r2{
+        transform: translateX(-50%) rotate(-64deg);
+    }
+    .r3{
+        transform: translateX(-50%) rotate(-46deg);
+    }
+    .r4{
+        transform: translateX(-50%) rotate(-28deg);
+    }
+    .r5{
+        transform: translateX(-50%) rotate(-10deg);
+    }
+    .r6{
+        transform: translateX(-50%) rotate(8deg);
+    }
+    .r7{
+        transform: translateX(-50%) rotate(26deg);
+    }
+    .r8{
+        transform: translateX(-50%) rotate(44deg);
+    }
+    .r9{
+        transform: translateX(-50%) rotate(62deg);
+    }
+    .r10{
+        transform: rotate(80deg);
+    }
+    
+</style>
+<script>
 
 </script>
+
+
+
+
+
+
 
 <!--MIMA 32991415 -->
 <!-- <script>
@@ -534,4 +629,5 @@
     $('.Recipes-device').hide()
   }
 </script> -->
+
 </html>
