@@ -1,4 +1,15 @@
 
+// 页面初始化
+function pageInit() {
+    setTimeout(chartsRender,30) //一定要延迟
+    mapInfoDetailAlert();
+    closeMapAlert();
+    setTimeout(showPage, 40) //一定要延迟
+}
+
+pageInit()
+
+
 // 欠费图表
 function arrearsChartRender() {
     var arrearsChart = document.getElementById('arrearsChart');
@@ -503,9 +514,10 @@ function mapRender() {
         console.log(params)
         if (!params.data || params.data.value !== 5) {
             mapInfo.style.display = 'none'
+            $("#mapInfo, #mapInfoDetail").hide()
             return false
         }
-        mapInfo.style.display = 'block'
+        $("#mapInfo").show();
 
     });
     //初始化省颜色
@@ -566,12 +578,3 @@ function showPage() {
     $('body').css({'opacity': 1})
 }
 
-// 页面初始化
-function pageInit() {
-    setTimeout(chartsRender,30)
-    mapInfoDetailAlert();
-    closeMapAlert();
-    setTimeout(showPage, 40)
-}
-
-pageInit()

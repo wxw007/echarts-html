@@ -512,40 +512,46 @@
 
 
 <!-- 怪异的图-有毒 -->
-<div class="chart-wrap">
-    <div class="chart-item r1"></div>
-    <div class="chart-item r2"></div>
-    <div class="chart-item r3 l3"></div>
-    <div class="chart-item r4"></div>
-    <div class="chart-item r5"></div>
-    <div class="chart-item r6"></div>
-    <div class="chart-item r7"></div>
-    <div class="chart-item r8"></div>
-    <div class="chart-item r9"></div>
-    <div class="chart-item r10"></div>
-</div>
-<div class="chart-wrap c2">
-    <div class="chart-item r1"></div>
-    <div class="chart-item r2"></div>
-    <div class="chart-item r3 l3"></div>
-    <div class="chart-item r4"></div>
-    <div class="chart-item r5"></div>
-    <div class="chart-item r6"></div>
-    <div class="chart-item r7"></div>
-    <div class="chart-item r8"></div>
-    <div class="chart-item r9"></div>
-    <div class="chart-item r10"></div>
+<div class="chart-wrapper">
+    <div class="chart-box">
+        <div class="chart-item r1"><span>10%</span></div>
+        <div class="chart-item r2"><span>10%</span></div>
+        <div class="chart-item r3 l3"><span>10%</span></div>
+        <div class="chart-item r4"><span>10%</span></div>
+        <div class="chart-item r5"></div>
+        <div class="chart-item r6"><span>10%</span></div>
+        <div class="chart-item r7"><span>10%</span></div>
+        <div class="chart-item r8"><span>10%</span></div>
+        <div class="chart-item r9"><span>10%</span></div>
+        <div class="chart-item r10"><span>10%</span></div>
+    </div>
+    <div class="chart-box c2">
+        <div class="chart-item r1"><span>10%</span></div>
+        <div class="chart-item r2"><span>10%</span></div>
+        <div class="chart-item r3 l3"><span>10%</span></div>
+        <div class="chart-item r4"><span>10%</span></div>
+        <div class="chart-item r5"><span>10%</span></div>
+        <div class="chart-item r6"><span>10%</span></div>
+        <div class="chart-item r7"><span>10%</span></div>
+        <div class="chart-item r8"><span>10%</span></div>
+        <div class="chart-item r9"><span>10%</span></div>
+        <div class="chart-item r10"><span>10%</span></div>
+    </div>
+    <div class="inner-box"></div>
 </div>
 
 <style>
-    .chart-wrap{
+    .chart-wrapper{
+        position: relative;
+    }
+    .chart-box{
         margin: 0 auto;
         width: 300px;
         height: 300px;
         border: 1px solid #aaa;
         position: relative;
     }
-    .chart-wrap.c2{
+    .chart-box.c2{
         transform: rotate(180deg);
     }
     .chart-item {
@@ -595,7 +601,12 @@
     .r10{
         transform: rotate(80deg);
     }
-    
+    .chart-item > span{
+        position: absolute;
+        top: -235px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 </style>
 <script>
 

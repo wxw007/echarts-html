@@ -127,6 +127,9 @@ body {
     text-align: left;
 }
 
+/* 箭头 */
+
+
 
 
 
@@ -234,6 +237,182 @@ body {
     background: #FA493F;
 }
 
+/* 开业率和签约率 */
+.practiceAndSigning{
+    height: 5rem;
+    margin-top: .1rem;
+    box-sizing: border-box;
+    padding: 0;
+    font-size: .14rem;
+    position: relative;
+}
+.practiceAndSigning > div{
+    padding: .2rem;
+    position: relative;
+}
+.practiceAndSigning .practice{
+    height: 2.2rem;
+}
+.practiceAndSigning .signing{
+    height: 2rem;
+}
+
+.practice-location, .signing-location{
+    width: .65rem;
+    position: absolute;
+}
+.practice-location{
+    top: .72rem;
+}
+.signing-location{
+    top: .2rem;
+}
+.practice-location{
+    height: 1.25rem;
+}
+.practice-location > .practice-location-item{
+    margin-bottom: .1rem;
+}
+.practice-left{
+    left: .2rem;
+}
+.practice-right{
+    right: .2rem;
+}
+
+.signing-title-box{
+    position: absolute;
+    bottom: .2rem;
+    left: .2rem;
+    right: .2rem;
+}
+.signing-title-box .title-info{
+    margin: 0;
+}
+
+/* 怪异图表 */
+.practiceAndSigning .chart-wrapper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.chart-box{
+    margin: 0 auto;
+    width: 100%;
+    height: 1.4rem;
+    position: relative;
+}
+.chart-box:first-child{
+    border-bottom: 1px solid rgba(37, 64, 109, 1)
+}
+.chart-box.c2{
+    transform: rotate(180deg);
+}
+.chart-item {
+    width: 0;
+    height: 0;
+    border-top: 1.2rem solid black;
+    border-right: .12rem solid transparent;
+    border-left: .12rem solid transparent;
+    transform-origin: 50% 1.2rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+.chart-item.l3{
+    /* border-top: 300px solid black; */
+    transform: translateX(-50%) rotate(-46deg) scale(1.2);
+}
+
+/* 每个偏移单位为18度 */
+.r1{
+    transform: translateX(-50%) rotate(-82deg);
+    border-top: 1.2rem solid #F5A623;
+}
+.r2{
+    transform: translateX(-50%) rotate(-64deg);
+    border-top: 1.2rem solid #F8E71C;
+}
+.r3{
+    transform: translateX(-50%) rotate(-46deg);
+    border-top: 1.2rem solid #5AB46E;
+}
+.r4{
+    transform: translateX(-50%) rotate(-28deg);
+    border-top: 1.2rem solid #50E3C2;
+}
+.r5{
+    transform: translateX(-50%) rotate(-10deg);
+    border-top: 1.2rem solid #4A90E2;
+}
+.r6{
+    transform: translateX(-50%) rotate(8deg);
+    border-top: 1.2rem solid #6C7D92;
+}
+.r7{
+    transform: translateX(-50%) rotate(26deg);
+    border-top: 1.2rem solid #6C7D92;
+}
+.r8{
+    transform: translateX(-50%) rotate(44deg);
+    border-top: 1.2rem solid #6C7D92;
+}
+.r9{
+    transform: translateX(-50%) rotate(62deg);
+    border-top: 1.2rem solid #6C7D92;
+}
+.r10{
+    transform: rotate(80deg);
+    border-top: 1.2rem solid #6C7D92;
+}
+.chart-item > span{
+    position: absolute;
+    top: -1.43rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .12rem;
+}
+.inner-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -.557rem;
+    margin-top: -.557rem;
+    border-radius: 50%;
+    width: 1.14rem;
+    height: 1.14rem;
+    border: 1px solid rgba(37, 64, 109, 1);
+    background-color: #061734;
+    display: flex;
+}
+.inner-box .line{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: rgba(37, 64, 109, 1);
+}
+.inner-box>div{
+    font-size: .14rem;
+    flex: 1;
+    text-align: center;
+box-sizing: border-box;
+position: relative;
+}
+.inner-text{
+    position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.inner-num{
+    font-size: .24rem;
+}
+
+
 /* 左侧区域 end */
 
 /* 右侧区域 start */
@@ -320,7 +499,6 @@ body {
     width: .7rem;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
 
 .bar-single>.bar {
@@ -585,7 +763,6 @@ body {
 }
 .project-detail-list-row .type{
     width: 1rem;
-    /* 0.8 */
 }
 .project-detail-list-row .count{
     width: .8rem;
@@ -604,7 +781,7 @@ body {
 .middle-bottom > div{
     -webkit-box-flex: 1;
             flex: 1;
-    border: 1px solid #25406D;
+        font-size: .24rem;
 }
 .middle-bottom-left{
     margin-right: .1rem;
