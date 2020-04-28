@@ -155,6 +155,25 @@ body {
     background-size: contain;
 }
 
+/* 滚动条样式 */
+
+::-webkit-scrollbar {
+    width: 4px;
+    /*height: 4px;*/
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
 /* 通用样式 end */
 
 /* 左侧区域 start */
@@ -372,22 +391,21 @@ body {
     border-right: .12rem solid transparent;
     border-left: .12rem solid transparent;
     -webkit-transform-origin: 50% 1.2rem;
-            transform-origin: 50% 1.2rem;
+    transform-origin: 50% 1.2rem;
     position: absolute;
     bottom: 0;
     left: 50%;
 }
-.chart-item-down{
+
+.chart-item-down {
     border-top: none;
     border-bottom: 1.2rem solid black;
     -webkit-transform-origin: 50% 0;
-            transform-origin: 50% 0;
+    transform-origin: 50% 0;
     top: 0;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 }
-
-
 
 /* 每个偏移单位为18度 */
 
@@ -447,112 +465,121 @@ body {
 
 .r10 {
     -webkit-transform: translateX(-50%) rotate(80deg);
-            transform: translateX(-50%) rotate(80deg);
+    transform: translateX(-50%) rotate(80deg);
     border-top: 1.2rem solid #6C7D92;
 }
+
 .d1 {
     -webkit-transform: translateX(-50%) rotate(80deg);
-            transform: translateX(-50%) rotate(80deg);
+    transform: translateX(-50%) rotate(80deg);
     border-bottom: 1.2rem solid #F5A623;
 }
 
 .d2 {
     -webkit-transform: translateX(-50%) rotate(62deg);
-            transform: translateX(-50%) rotate(62deg);
+    transform: translateX(-50%) rotate(62deg);
     border-bottom: 1.2rem solid #F8E71C;
 }
 
 .d3 {
     -webkit-transform: translateX(-50%) rotate(44deg);
-            transform: translateX(-50%) rotate(44deg);
+    transform: translateX(-50%) rotate(44deg);
     border-bottom: 1.2rem solid #5AB46E;
 }
 
 .d4 {
     -webkit-transform: translateX(-50%) rotate(26deg);
-            transform: translateX(-50%) rotate(26deg);
+    transform: translateX(-50%) rotate(26deg);
     border-bottom: 1.2rem solid #50E3C2;
 }
 
 .d5 {
     -webkit-transform: translateX(-50%) rotate(8deg);
-            transform: translateX(-50%) rotate(8deg);
+    transform: translateX(-50%) rotate(8deg);
     border-bottom: 1.2rem solid #4A90E2;
 }
 
 .d6 {
     -webkit-transform: translateX(-50%) rotate(-10deg);
-            transform: translateX(-50%) rotate(-10deg);
+    transform: translateX(-50%) rotate(-10deg);
     border-bottom: 1.2rem solid #6C7D92;
 }
 
 .d7 {
     -webkit-transform: translateX(-50%) rotate(-28deg);
-            transform: translateX(-50%) rotate(-28deg);
+    transform: translateX(-50%) rotate(-28deg);
     border-bottom: 1.2rem solid #6C7D92;
 }
 
 .d8 {
     -webkit-transform: translateX(-50%) rotate(-46deg);
-            transform: translateX(-50%) rotate(-46deg);
+    transform: translateX(-50%) rotate(-46deg);
     border-bottom: 1.2rem solid #6C7D92;
 }
 
 .d9 {
     -webkit-transform: translateX(-50%) rotate(-64deg);
-            transform: translateX(-50%) rotate(-64deg);
+    transform: translateX(-50%) rotate(-64deg);
     border-bottom: 1.2rem solid #6C7D92;
 }
 
 .d10 {
     -webkit-transform: translateX(-50%) rotate(-80deg);
-            transform: translateX(-50%) rotate(-80deg);
+    transform: translateX(-50%) rotate(-80deg);
     border-bottom: 1.2rem solid #6C7D92;
 }
 
 /* 长度如果有变化 需要用 transform 系列样式 覆盖 r/d 系列样式 */
+
 .chart-item.transform1-1 {
     -webkit-transform: translateX(-50%) rotate(-82deg) scale(1.3);
-            transform: translateX(-50%) rotate(-82deg) scale(1.3);
+    transform: translateX(-50%) rotate(-82deg) scale(1.3);
 }
+
 .chart-item.transform1-2 {
     -webkit-transform: translateX(-50%) rotate(-64deg) scale(1.25);
-            transform: translateX(-50%) rotate(-64deg) scale(1.25);
+    transform: translateX(-50%) rotate(-64deg) scale(1.25);
 }
+
 .chart-item.transform1-3 {
     -webkit-transform: translateX(-50%) rotate(-46deg) scale(1.2);
-            transform: translateX(-50%) rotate(-46deg) scale(1.2);
+    transform: translateX(-50%) rotate(-46deg) scale(1.2);
 }
+
 .chart-item.transform1-4 {
     -webkit-transform: translateX(-50%) rotate(-28deg) scale(1.15);
-            transform: translateX(-50%) rotate(-28deg) scale(1.15);
+    transform: translateX(-50%) rotate(-28deg) scale(1.15);
 }
+
 .chart-item.transform1-5 {
     -webkit-transform: translateX(-50%) rotate(-10deg) scale(1.1);
-            transform: translateX(-50%) rotate(-10deg) scale(1.1);
+    transform: translateX(-50%) rotate(-10deg) scale(1.1);
 }
 
 .chart-item.transform2-1 {
     -webkit-transform: translateX(-50%) rotate(80deg) scale(1.3);
-            transform: translateX(-50%) rotate(80deg) scale(1.3);
-}
-.chart-item.transform2-2 {
-    -webkit-transform: translateX(-50%) rotate(62deg) scale(1.25);
-            transform: translateX(-50%) rotate(62deg) scale(1.25);
-}
-.chart-item.transform2-3 {
-    -webkit-transform: translateX(-50%) rotate(44deg) scale(1.2);
-            transform: translateX(-50%) rotate(44deg) scale(1.2);
-}
-.chart-item.transform2-4 {
-    -webkit-transform: translateX(-50%) rotate(26deg) scale(1.15);
-            transform: translateX(-50%) rotate(26deg) scale(1.15);
-}
-.chart-item.transform2-5 {
-    -webkit-transform: translateX(-50%) rotate(8deg) scale(1.1);
-            transform: translateX(-50%) rotate(8deg) scale(1.1);
+    transform: translateX(-50%) rotate(80deg) scale(1.3);
 }
 
+.chart-item.transform2-2 {
+    -webkit-transform: translateX(-50%) rotate(62deg) scale(1.25);
+    transform: translateX(-50%) rotate(62deg) scale(1.25);
+}
+
+.chart-item.transform2-3 {
+    -webkit-transform: translateX(-50%) rotate(44deg) scale(1.2);
+    transform: translateX(-50%) rotate(44deg) scale(1.2);
+}
+
+.chart-item.transform2-4 {
+    -webkit-transform: translateX(-50%) rotate(26deg) scale(1.15);
+    transform: translateX(-50%) rotate(26deg) scale(1.15);
+}
+
+.chart-item.transform2-5 {
+    -webkit-transform: translateX(-50%) rotate(8deg) scale(1.1);
+    transform: translateX(-50%) rotate(8deg) scale(1.1);
+}
 
 .chart-item>span {
     position: absolute;
@@ -562,6 +589,7 @@ body {
     transform: translateX(-50%);
     font-size: .12rem;
 }
+
 .chart-item-down>span {
     position: absolute;
     bottom: -1.43rem;
@@ -961,7 +989,10 @@ body {
 }
 
 .map-info .project-list-row .project-name {
-    width: .65rem;
+    width: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .map-info .project-list-row .project-date {

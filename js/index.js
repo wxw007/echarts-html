@@ -1,14 +1,12 @@
-
 // 页面初始化
 function pageInit() {
-    setTimeout(chartsRender,30) //一定要延迟
+    setTimeout(chartsInit, 30) //一定要延迟
     mapInfoDetailAlert();
     closeMapAlert();
     setTimeout(showPage, 40) //一定要延迟
 }
 
 pageInit()
-
 
 // 欠费图表
 function arrearsChartRender() {
@@ -145,7 +143,7 @@ function achievementChartRender() {
         },
 
         series: [{
-            data: [120, 200, 150, 80],
+            data: [120, 250, 150, 80],
             type: 'bar',
             itemStyle: {
                 normal: {
@@ -153,15 +151,15 @@ function achievementChartRender() {
                     barBorderRadius: [50, 50, 0, 0],
 
                     // 柱状图上方文字
-                    label: {
-                        formatter: "111人",
-                        show: true,
-                        position: "top",
-                        textStyle: {
-                            fontSize: "12",
-                            color: "#fff"
-                        }
-                    },
+                    // label: {
+                    //     formatter: "111人",
+                    //     show: true,
+                    //     position: "top",
+                    //     textStyle: {
+                    //         fontSize: "12",
+                    //         color: "#fff"
+                    //     }
+                    // },
                     color: new echarts.graphic.LinearGradient(
                         0, 0, 0, 1,
                         [
@@ -247,184 +245,160 @@ function mortgageChartRender() {
 // 地图
 function mapRender() {
     var myChart = echarts.init(document.getElementById('china-map'));
+
+    // 地图的数据
     var data = [{
         name: '浙江',
-        value1: 0,
-        value2: 5,
+        value: 5,
+        children: [
+            {
+                a: 1
+            }
+        ]
+        // 可自行添加...
     }, {
         name: '山东',
-        value1: 0,
-        value2: 5,
+        value: 0,
     }, {
         name: '河南',
-        value1: 0,
-        value2: 5,
+        value: 0,
     },
     {
         name: '内蒙古',
-        value1: 0,
-        value2: 5,
+        value: 0,
     },
     {
         name: '黑龙江',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '辽宁',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '吉林',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '北京',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '天津',
-        value1: 0,
-        value2: 0,
+        value: 0,
     }, {
         name: '河北',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '陕西',
-        value1: 0,
-        value2: 0,
+        value: 0,
     }, {
         name: '山西',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '江苏',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '上海',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '湖北',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '湖南',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '福建',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '江西',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '广东',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '广西',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '澳门',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '香港',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '海南',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '云南',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '贵州',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '四川',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '重庆',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '青海',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '西藏',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '新疆',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '甘肃',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '宁夏',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '台湾',
-        value1: 0,
-        value2: 0,
+        value: 0,
     },
     {
         name: '安徽',
-        value1: 0,
-        value2: 0,
+        value: 0,
+    },
+    {
+        name: '南海诸岛',
+        value: 0,
     }
     ];
     var resultdata0 = [];
-    var sum0 = 0;
-    var titledata = [];
+    // var titledata = []; //坐标系的文字
     for (var i = 0; i < data.length; i++) {
         var d0 = {
             name: data[i].name,
-            value: data[i].value1 + data[i].value2
+            value: data[i].value || 0,
         };
-        titledata.push(data[i].name)
-        resultdata0.push(d0);
-        sum0 += data[i].value1 + data[i].value2;
+        // titledata.push(data[i].name)
+        resultdata0.push(data[i]);
     }
 
     function NumDescSort(a, b) {
@@ -461,14 +435,13 @@ function mapRender() {
         yAxis: [{
             show: false,
             type: 'category',
-            data: titledata,
+            // data: titledata, //坐标系的文字
             axisTick: {
                 alignWithLabel: true
             }
         }],
 
         series: [{
-
             hoverable: false,
             z: 1,
             type: 'map',
@@ -483,18 +456,19 @@ function mapRender() {
                     borderColor: "#999", // 省份边界的颜色
                 },
             },
-            label: {
-                normal: {
-                    show: false, //显示省份文字
-                    textStyle: {
-                        fontSize: 12,
-                        color: '#fff'
-                    },
-                },
-                emphasis: {
-                    show: true
-                }
-            },
+            // 显示省份文字
+            // label: {
+            //     normal: {
+            //         show: true, 
+            //         textStyle: {
+            //             fontSize: 12,
+            //             color: '#fff'
+            //         },
+            //     },
+            //     emphasis: {
+            //         show: true
+            //     }
+            // },
             //roam: true,
             data: resultdata0
         }]
@@ -508,45 +482,45 @@ function mapRender() {
         myChart.setOption(option);
     })
 
-    //点击事件
+    //地图点击事件
     myChart.on('click', function (params) {//点击事件
         var mapInfo = document.getElementById('mapInfo');
         console.log(params)
         if (!params.data || params.data.value !== 5) {
             mapInfo.style.display = 'none'
-            $("#mapInfo, #mapInfoDetail").hide()
+            $("#mapInfo, #mapInfoDetail").hide();
             return false
         }
         $("#mapInfo").show();
 
     });
     //初始化省颜色
-    function ini_province() {
-        var ini_len = option.series[0].data.length;
-        for (var i = 0; i < ini_len; i++) {
-            //初始化颜色
-            option.series[0].data[i].value = 0;
-            myChart.setOption(option);
-        }
+    // function ini_province() {
+    //     var ini_len = option.series[0].data.length;
+    //     for (var i = 0; i < ini_len; i++) {
+    //         //初始化颜色
+    //         option.series[0].data[i].value = 0;
+    //         myChart.setOption(option);
+    //     }
 
-    }
+    // }
     //选中省颜色
-    function select_province(province_name) {
-        var len = option.series[0].data.length;
-        for (var i = 0; i < len; i++) {
-            if (option.series[0].data[i].name == province_name) {//如果匹配正确
-                //先归零
-                ini_province();
-                //改变颜色
-                option.series[0].data[i].value = 15;
-                myChart.setOption(option);
-            }
-        }
-    }
+    // function select_province(province_name) {
+    //     var len = option.series[0].data.length;
+    //     for (var i = 0; i < len; i++) {
+    //         if (option.series[0].data[i].name == province_name) {//如果匹配正确
+    //             //先归零
+    //             ini_province();
+    //             //改变颜色
+    //             option.series[0].data[i].value = 15;
+    //             myChart.setOption(option);
+    //         }
+    //     }
+    // }
 }
 
 // 由于页面使用了rem单位,所以需要在页面完全渲染完成之后再绘制图表, 否则图表展不开 ！
-function chartsRender() {
+function chartsInit() {
     arrearsChartRender();
     achievementChartRender();
     mortgageChartRender();
@@ -575,7 +549,7 @@ function closeMapAlert() {
 
 // 页面渲染完成后展示页面(防止rem抖动)
 function showPage() {
-    $('body').css({'opacity': 1})
+    $('body').css({ 'opacity': 1 })
 }
 
 
