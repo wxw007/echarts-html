@@ -6,6 +6,9 @@ body {
     /* 浏览器不支持时显示 */
     /* background-image: linear-gradient(#413875, #9198e5); */
 }
+.datetimepicker{
+    color: #333;
+}
 
 .wrapper {
     width: 100vw;
@@ -241,7 +244,7 @@ body {
     margin-top: .1rem;
 }
 
-.collection .container {
+.collection .collection-container {
     display: -webkit-box;
     display: flex;
 }
@@ -307,6 +310,7 @@ body {
 .practiceAndSigning>div {
     padding: .2rem;
     position: relative;
+    box-sizing: content-box;
 }
 
 .practiceAndSigning .practice {
@@ -336,8 +340,8 @@ body {
 
 .practice-location>.practice-location-item {
     margin-bottom: .1rem;
+    box-sizing: content-box;
 }
-
 .practice-left {
     left: .2rem;
 }
@@ -828,8 +832,16 @@ body {
     margin-top: .2rem;
     height: .3rem;
     width: 2rem;
-    background: #fff;
-    opacity: .3;
+    color: #fff;
+}
+.date-picker > input{
+    color: #70FFF9;
+    /* border: 1px solid #70FFF9 !important; */
+    border: none !important;
+    outline: none !important;
+}
+.ys-datetimepicker:after{
+    border: none;
 }
 
 .project-info-box {

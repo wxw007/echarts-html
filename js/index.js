@@ -560,6 +560,20 @@ $('.title-tab').click(function(){
     alert('要改变具体数据, 直接在对应html标签上加上id,并且写相应点击事件即可')
 })
 
+// 时间选择器初始化
+function datePickerInit(){
+    var datepicker = $(".ys-datetimepicker").find("input[name=certDate]").datetimepicker({
+        format: "yyyy-mm-dd",
+        todayBtn: "linked",
+        startView: 2,
+        minView: 2,
+        autoclose: true,
+        language: "zh-CN",
+    }).on('changeDate', function(e){
+    });
+}
+setTimeout(datePickerInit, 100)
+
 
 
 
