@@ -246,10 +246,10 @@ function mortgageChartRender() {
 function mapRender() {
     var myChart = echarts.init(document.getElementById('china-map'));
 
-    // 地图的数据
+    // 地图的数据 有数据的 value 设置为1, 无数据的设置为 0
     var data = [{
         name: '浙江',
-        value: 5,
+        value: 1,
         children: [
             {
                 a: 1
@@ -258,7 +258,7 @@ function mapRender() {
         // 可自行添加...
     }, {
         name: '山东',
-        value: 0,
+        value: 1,
     }, {
         name: '河南',
         value: 0,
@@ -413,7 +413,7 @@ function mapRender() {
             x: 'left',
             y: 'bottom',
             splitList: [
-                { start: 5, end: 5, color: '#5EA8FF' },//当值为5时，区域背景
+                { start: 1, end: 1, color: '#5EA8FF' },//当值为1时，区域背景
                 { start: 0, end: 0, color: '#061734' },//当值为0时，区域背景
 
             ],
@@ -551,5 +551,15 @@ function closeMapAlert() {
 function showPage() {
     $('body').css({ 'opacity': 1 })
 }
+
+
+
+// 所有 tab 切换样式
+$('.title-tab').click(function(){
+    $(this).addClass('active').siblings().removeClass('active');
+    alert('要改变具体数据, 直接在对应html标签上加上id,并且写相应点击事件即可')
+})
+
+
 
 
