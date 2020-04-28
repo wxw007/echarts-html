@@ -486,7 +486,7 @@ function mapRender() {
     myChart.on('click', function (params) {//点击事件
         var mapInfo = document.getElementById('mapInfo');
         console.log(params)
-        if (!params.data || params.data.value !== 5) {
+        if (!params.data || params.data.value !== 1) {
             mapInfo.style.display = 'none'
             $("#mapInfo, #mapInfoDetail").hide();
             return false
