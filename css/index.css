@@ -831,18 +831,31 @@ body {
     float: right;
     margin-top: .2rem;
     height: .3rem;
-    width: 2rem;
+    width: 1.4rem;
     color: #fff;
 }
-.date-picker > input{
+.date-picker.ys-datepicker > input{
     color: #70FFF9;
     /* border: 1px solid #70FFF9 !important; */
     border: none !important;
     outline: none !important;
+    padding-left: .1rem;
+    font-size: .18rem;
+    width: 1.5rem;
+    margin-left: .15rem;
+}
+.date-picker > input:focus{
+    box-shadow: none;
 }
 .ys-datetimepicker:after{
     border: none;
+    left: 0;
+    width: .16rem;
+    display: inline-block;
+    background-size: .16rem .14rem;
+
 }
+
 
 .project-info-box {
     display: -webkit-box;
@@ -1084,8 +1097,8 @@ body {
 .middle-bottom {
     display: -webkit-box;
     display: flex;
-    height: 2.35rem;
-    margin-top: .2rem;
+    height: 2.39rem;
+    margin-top: .265rem;
 }
 
 .middle-bottom>div {
