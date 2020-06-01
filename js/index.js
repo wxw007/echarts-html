@@ -117,8 +117,10 @@ function achievementChartRender() {
                 show: true,
                 textStyle: {
                     color: '#fff',  //更改坐标轴文字颜色
-                    fontSize: 12      //更改坐标轴文字大小
+                    fontSize: 10      //更改坐标轴文字大小
                 },
+                interval:0,
+                rotate:40
             },
             axisLine: {
                 lineStyle: {
@@ -136,10 +138,10 @@ function achievementChartRender() {
 
         // 坐标轴位置
         grid: {
-            x: 10,
-            y: 20,
-            x2: 10,
-            y2: 20
+            x: 20,
+            y: 10,
+            x2: 0,
+            y2: 45
         },
 
         series: [{

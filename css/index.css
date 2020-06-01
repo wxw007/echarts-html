@@ -233,9 +233,10 @@ body {
 }
 
 .arrears-count>.arrears-num {
-    -webkit-box-flex: 1;
-    flex: 1;
     margin-left: .05rem;
+    text-align: right;
+    width: .55rem;
+    display: inline-block;
 }
 
 /* 收缴率 */
@@ -328,10 +329,12 @@ body {
 
 .practice-location {
     top: .72rem;
+    width: 1rem;
 }
 
 .signing-location {
     top: .2rem;
+    width: 1rem;
 }
 
 .practice-location {
@@ -367,7 +370,7 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
+    /* -webkit-transform: translate(-50%, -50%); */
     transform: translate(-50%, -50%);
     width: 100%;
 }
@@ -379,8 +382,16 @@ body {
     position: relative;
 }
 
-.chart-box:first-child {
-    border-bottom: 1px solid rgba(37, 64, 109, 1)
+/* .chart-box:first-child {
+    border-bottom: 1px solid rgba(37, 64, 109, 1) 
+} */
+.chart-box:first-child::before{
+    content: '';
+    height: 1px;
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    background: rgba(37, 64, 109, 1);
 }
 
 .chart-box.c2 {
@@ -391,11 +402,11 @@ body {
 .chart-item {
     width: 0;
     height: 0;
-    border-top: 1.2rem solid black;
-    border-right: .12rem solid transparent;
-    border-left: .12rem solid transparent;
-    -webkit-transform-origin: 50% 1.2rem;
-    transform-origin: 50% 1.2rem;
+    border-top: 1.rem solid black;
+    border-right: .1rem solid transparent;
+    border-left: .1rem solid transparent;
+    -webkit-transform-origin: 50% 1rem;
+    transform-origin: 50% 1rem;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -403,7 +414,7 @@ body {
 
 .chart-item-down {
     border-top: none;
-    border-bottom: 1.2rem solid black;
+    border-bottom: 1rem solid black;
     -webkit-transform-origin: 50% 0;
     transform-origin: 50% 0;
     top: 0;
@@ -416,127 +427,127 @@ body {
 .r1 {
     -webkit-transform: translateX(-50%) rotate(-82deg);
     transform: translateX(-50%) rotate(-82deg);
-    border-top: 1.2rem solid #F5A623;
+    border-top: 1rem solid #F5A623;
 }
 
 .r2 {
     -webkit-transform: translateX(-50%) rotate(-64deg);
     transform: translateX(-50%) rotate(-64deg);
-    border-top: 1.2rem solid #F8E71C;
+    border-top: 1rem solid #F8E71C;
 }
 
 .r3 {
     -webkit-transform: translateX(-50%) rotate(-46deg);
     transform: translateX(-50%) rotate(-46deg);
-    border-top: 1.2rem solid #5AB46E;
+    border-top: 1rem solid #5AB46E;
 }
 
 .r4 {
     -webkit-transform: translateX(-50%) rotate(-28deg);
     transform: translateX(-50%) rotate(-28deg);
-    border-top: 1.2rem solid #50E3C2;
+    border-top: 1rem solid #50E3C2;
 }
 
 .r5 {
     -webkit-transform: translateX(-50%) rotate(-10deg);
     transform: translateX(-50%) rotate(-10deg);
-    border-top: 1.2rem solid #4A90E2;
+    border-top: 1rem solid #4A90E2;
 }
 
 .r6 {
     -webkit-transform: translateX(-50%) rotate(8deg);
     transform: translateX(-50%) rotate(8deg);
-    border-top: 1.2rem solid #6C7D92;
+    border-top: 1rem solid #6C7D92;
 }
 
 .r7 {
     -webkit-transform: translateX(-50%) rotate(26deg);
     transform: translateX(-50%) rotate(26deg);
-    border-top: 1.2rem solid #6C7D92;
+    border-top: 1rem solid #6C7D92;
 }
 
 .r8 {
     -webkit-transform: translateX(-50%) rotate(44deg);
     transform: translateX(-50%) rotate(44deg);
-    border-top: 1.2rem solid #6C7D92;
+    border-top: 1rem solid #6C7D92;
 }
 
 .r9 {
     -webkit-transform: translateX(-50%) rotate(62deg);
     transform: translateX(-50%) rotate(62deg);
-    border-top: 1.2rem solid #6C7D92;
+    border-top: 1rem solid #6C7D92;
 }
 
 .r10 {
     -webkit-transform: translateX(-50%) rotate(80deg);
-    transform: translateX(-50%) rotate(80deg);
-    border-top: 1.2rem solid #6C7D92;
+    transform: translateX(-50%) rotate(80deg) scale(0.6);
+    border-top: 1rem solid #6C7D92;
 }
 
 .d1 {
     -webkit-transform: translateX(-50%) rotate(80deg);
     transform: translateX(-50%) rotate(80deg);
-    border-bottom: 1.2rem solid #F5A623;
+    border-bottom: 1rem solid #F5A623;
 }
 
 .d2 {
     -webkit-transform: translateX(-50%) rotate(62deg);
     transform: translateX(-50%) rotate(62deg);
-    border-bottom: 1.2rem solid #F8E71C;
+    border-bottom: 1rem solid #F8E71C;
 }
 
 .d3 {
     -webkit-transform: translateX(-50%) rotate(44deg);
     transform: translateX(-50%) rotate(44deg);
-    border-bottom: 1.2rem solid #5AB46E;
+    border-bottom: 1rem solid #5AB46E;
 }
 
 .d4 {
     -webkit-transform: translateX(-50%) rotate(26deg);
     transform: translateX(-50%) rotate(26deg);
-    border-bottom: 1.2rem solid #50E3C2;
+    border-bottom: 1rem solid #50E3C2;
 }
 
 .d5 {
     -webkit-transform: translateX(-50%) rotate(8deg);
     transform: translateX(-50%) rotate(8deg);
-    border-bottom: 1.2rem solid #4A90E2;
+    border-bottom: 1rem solid #4A90E2;
 }
 
 .d6 {
     -webkit-transform: translateX(-50%) rotate(-10deg);
     transform: translateX(-50%) rotate(-10deg);
-    border-bottom: 1.2rem solid #6C7D92;
+    border-bottom: 1rem solid #6C7D92;
 }
 
 .d7 {
     -webkit-transform: translateX(-50%) rotate(-28deg);
     transform: translateX(-50%) rotate(-28deg);
-    border-bottom: 1.2rem solid #6C7D92;
+    border-bottom: 1rem solid #6C7D92;
 }
 
 .d8 {
     -webkit-transform: translateX(-50%) rotate(-46deg);
     transform: translateX(-50%) rotate(-46deg);
-    border-bottom: 1.2rem solid #6C7D92;
+    border-bottom: 1rem solid #6C7D92;
 }
 
 .d9 {
     -webkit-transform: translateX(-50%) rotate(-64deg);
     transform: translateX(-50%) rotate(-64deg);
-    border-bottom: 1.2rem solid #6C7D92;
+    border-bottom: 1rem solid #6C7D92;
 }
 
 .d10 {
     -webkit-transform: translateX(-50%) rotate(-80deg);
     transform: translateX(-50%) rotate(-80deg);
-    border-bottom: 1.2rem solid #6C7D92;
+    border-bottom: 1rem solid #6C7D92;
 }
 
 /* 长度如果有变化 需要用 transform 系列样式 覆盖 r/d 系列样式 */
 
 .chart-item.transform1-1 {
-    -webkit-transform: translateX(-50%) rotate(-82deg) scale(1.3);
+    -webkit-transform: translateX(-50%) rotate(-82deg) scale(1.25);
     transform: translateX(-50%) rotate(-82deg) scale(1.3);
 }
 
@@ -587,7 +598,7 @@ body {
 
 .chart-item>span {
     position: absolute;
-    top: -1.43rem;
+    top: -1.2rem;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -596,7 +607,7 @@ body {
 
 .chart-item-down>span {
     position: absolute;
-    bottom: -1.43rem;
+    bottom: -1.2rem;
     top: auto;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -608,8 +619,8 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -.557rem;
-    margin-top: -.557rem;
+    margin-left: -.570rem;
+    margin-top: -.570rem;
     border-radius: 50%;
     width: 1.14rem;
     height: 1.14rem;
@@ -705,11 +716,13 @@ body {
 .lease-list .list-item-td:nth-child(2) {
     -webkit-box-flex: 1.1;
     flex: 1.1;
+    text-align: right;
 }
 
 .lease-list .list-item-td:last-child {
     -webkit-box-flex: 1.3;
     flex: 1.3;
+    text-align: right;
 }
 
 .mortgage .order {
@@ -1014,19 +1027,27 @@ body {
 }
 
 .map-info .project-list-row .project-name {
-    width: 1rem;
+    width: .7rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    display: inline-block;
+    float: left;
 }
 
 .map-info .project-list-row .project-date {
-    width: 1.5rem;
+    width: 1.3rem;
+    display: inline-block;
+    float: left;
 }
 
 .map-info .project-list-row .project-area {
-    -webkit-box-flex: 1;
-    flex: 1;
+    width: 1rem;
+    text-align: left;
+    display: inline-block;
+    float: right;
+    margin-left: .15rem;
+    text-align: right;
 }
 
 .map-box .map-info-detail {
@@ -1082,16 +1103,18 @@ body {
 }
 
 .project-detail-list-row .type {
-    width: 1rem;
+    width: .8rem;
 }
 
 .project-detail-list-row .count {
-    width: .8rem;
+    width: .65rem;
+    text-align: right;
 }
 
 .project-detail-list-row .order {
     -webkit-box-flex: 1;
     flex: 1;
+    text-align: right;
 }
 
 .middle-bottom {
