@@ -127,7 +127,7 @@ function achievementChartRender() {
                     color: '#132A51' //更改坐标轴颜色
                 }
             },
-            data: ['集团', '华中', '华南', '华北']
+            data: ['集团集团啊','集团集团啊', '华中', '华南', '华北']
         },
 
         // 坐标轴y
@@ -139,13 +139,13 @@ function achievementChartRender() {
         // 坐标轴位置
         grid: {
             x: 20,
-            y: 10,
+            y: 30,
             x2: 0,
             y2: 45
         },
 
         series: [{
-            data: [120, 250, 150, 80],
+            data: [620, 800, 150, 800, 600],
             type: 'bar',
             itemStyle: {
                 normal: {
@@ -153,15 +153,15 @@ function achievementChartRender() {
                     barBorderRadius: [50, 50, 0, 0],
 
                     // 柱状图上方文字
-                    // label: {
-                    //     formatter: "111人",
-                    //     show: true,
-                    //     position: "top",
-                    //     textStyle: {
-                    //         fontSize: "12",
-                    //         color: "#fff"
-                    //     }
-                    // },
+                    label: {
+                        formatter: "111人",
+                        show: true,
+                        position: "top",
+                        textStyle: {
+                            fontSize: "12",
+                            color: "#fff"
+                        }
+                    },
                     color: new echarts.graphic.LinearGradient(
                         0, 0, 0, 1,
                         [
